@@ -1,2 +1,2 @@
 # billionbooks-frontend
-The Front End For billionbooks site
+The Front End Repository For billionbooks site
