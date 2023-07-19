@@ -1,14 +1,43 @@
-import React from 'react'
-import SectionSlider from '@/components/SectionSlider'
-import Product from '@/components/Product'
+import React from "react";
+import Image from "next/image";
+import styles from "./page.module.css";
+import Fcategories from "@/components/Fcategories/Fcategories";
+
 const Home = () => {
   return (
     <section className="w-full flex-center flex-col main">
-    {/* <Product />
-    <SectionSlider /> */}
-  </section>
-  
-  )
-}
+      <div className={`flex flex-col md:flex-row ${styles.container}`}>
+        <div className={`pl-12 ml-20 flex-1 ${styles.content}`}>
+          <h1 className={styles.herotitle}>
+            BILLIONBOOKS <br />
+            More Than A Bookstore
+          </h1>
+          <div className={styles.desc}>
+            <p className="merrifont">Eco-Friendly Packaging & Free Bookmarks</p>
+            <p className="text-lg pt-2 merrifont">
+              Free Shipping On PrePaid Orders Across India.
+            </p>
+          
+          </div>
 
-export default Home
+          <p className="text-sm pt-3 my-4 ">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia aspernatur voluptas quos repellendus, saepe
+              voluptatibus facilis sapiente. Ex reprehenderit, minus voluptatum, <br /> beatae eum inventore iste, id eius pariatur nam porro. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, laboriosam.
+            </p>
+          <button className=" my-3 herobtn hover:bg-indigo-900"> Shop Now</button>
+        </div>
+        <div className={styles.item}>
+          <img src="/product.png" alt="hero img" />
+        </div>
+      </div>
+
+      <div className="w-90% bg-slate-800 h-10">
+
+      </div>
+
+      <Fcategories/>
+    </section>
+  );
+};
+
+export default Home;
