@@ -366,12 +366,26 @@ figure img {
   color: white;
   background-color: var(--bg);
 }
+.blackbg{
+  background-color:black;
+  height: 500px;
+  margin-bottom: 40px;
+
+
+}
+
+.ind{
+  z-index: 50000;
+}
 .popinsfont{
   font-family: var(--primary-color);
 }
   .merrifont{
     font-family: var(--merri-font);
 
+  }
+  .popin{
+    font-family: var(--primary-font);
   }
 
   .noto-font{
@@ -393,6 +407,10 @@ figure img {
     padding-right: 29px;
     
     
+  }
+
+  .darkbg{
+    background-color: var(--primary-color);
   }
 
 

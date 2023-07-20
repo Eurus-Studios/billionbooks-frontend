@@ -2,13 +2,13 @@
 import React, { useEffect, useState } from 'react';
 import './globals.css';
 import { Inter } from 'next/font/google';
-import Navbar from '@/components/navbar/Navbar';
-import MobileNav from '@/components/MobileNav/MobileNav';
+import Navbar from '@/components/Navbar';
+import MobileNav from '@/components/MobileNav';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Product page',
+  title: 'Billion Books',
   description: 'A detailed page showcasing product information',
 };
 

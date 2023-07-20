@@ -1,4 +1,48 @@
 // data.js
+
+const productDetails = [
+  {
+    id: 1,
+    title: 'Product 1',
+    imgUrl: './book1.jpg', // Replace this with the actual image URL
+    price: 29.99, // Replace this with the actual price
+  },
+  {
+    id: 2,
+    title: 'Product 2',
+    imgUrl: './book1.jpg', // Replace this with the actual image URL
+    price: 39.99, // Replace this with the actual price
+  },
+  {
+    id: 3,
+    title: 'Product 2',
+    imgUrl: './book1.jpg', // Replace this with the actual image URL
+    price: 39.99, // Replace this with the actual price
+  },
+  {
+    id: 4,
+    title: 'Product 2',
+    imgUrl: './book1.jpg', // Replace this with the actual image URL
+    price: 39.99, // Replace this with the actual price
+  },
+  {
+    id: 5,
+    title: 'Product 2',
+    imgUrl: './book1.jpg', // Replace this with the actual image URL
+    price: 39.99, // Replace this with the actual price
+  },
+  {
+    id: 6,
+    title: 'Product 2',
+    imgUrl: './book1.jpg', // Replace this with the actual image URL
+    price: 39.99, // Replace this with the actual price
+  },
+  // Add more products as needed
+];
+
+export default productDetails;
+
+
 export const categories = [
   { id: 1, title: "Any books at 999", url: "/categories/999" },
   { id: 2, title: "Book boxes", url: "/categories/book-boxes" },

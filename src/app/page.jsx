@@ -1,8 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
-import Fcategories from "@/components/Fcategories/Fcategories";
-
+import Fcategories from "@/components/Fcategories";
+import ProductCard from "@/components/ProductCard";
+import Product from "@/components/ProductDetails";
+import pd from "@/components/Pd";
 const Home = () => {
   return (
     <section className="w-full flex-center flex-col main">
@@ -36,6 +38,12 @@ const Home = () => {
       </div>
 
       <Fcategories/>
+      <ProductCard/>
+      <Product/>
+      <pd/>
+      
+      
+
     </section>
   );
 };

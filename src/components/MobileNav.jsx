@@ -4,7 +4,7 @@ import React from "react";
 import { FiMenu } from "react-icons/fi";
 import { AiOutlineHome, AiOutlineShop, AiOutlineUser } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
-import { categories, navigationItems } from "../data";
+import { categories, navigationItems } from "./data";
 import Link from "next/link";
 import Image from "next/image";
 import { VscHeart } from "react-icons/vsc";
@@ -171,7 +171,7 @@ const MobileNav = () => {
 
 {/* -------fixed bottom menu---------- */}
 
-<div className="bottommenu">
+<div className="bottommenu ind">
       <nav className="fixed bottom-0 left-0 w-full bg-white p-2 flex justify-around items-center border-t border-gray-300 md:hidden">
         <a
           href="#"

@@ -4,7 +4,7 @@ import Image from "next/image";
 const ResponsiveGridLayout = () => {
   return (
 
-    <section className="flex my-11 flex-col">
+    <section className="flex my-11 flex-col mx-auto md:mx-2">
         <h1 className="popinsfont text-xl text-center font-bold my-4">FEATURED CATEGORIES</h1>
        <div className="text-center pb-4 text-sm latofont">National & International Best Selling Collections</div>
     <div className="flex flex-wrap justify-center ">
