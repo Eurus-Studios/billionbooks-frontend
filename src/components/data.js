@@ -225,6 +225,132 @@ export const productDetails = [
     price: 199,
     category: 'EBOOKS',
   },
+
+
+  {
+    id: 33,
+    title: 'A brief bestsellers of modern India (Spectrum)',
+    imgUrl: './book1.jpg',
+    price: 230,
+    category: 'bestsellers',
+  },
+  {
+    id: 34,
+    title: 'Alibaba',
+    imgUrl: './book2.jpg',
+    price: 199,
+    category: 'bestsellers',
+  },
+  {
+    id: 35,
+    title: 'Archer (Hardcover)',
+    imgUrl: './book3.jpg',
+    price: 199,
+    category: 'bestsellers',
+  },
+  {
+    id: 36,
+    title: 'DO EPIC SHIT Hardcover',
+    imgUrl: './book4.jpg',
+    price: 239,
+    category: 'bestsellers',
+  },
+  {
+    id: 37,
+    title: 'Hooked Hardcover',
+    imgUrl: './book5.jpg',
+    price: 219,
+    category: 'bestsellers',
+  },
+  {
+    id: 38,
+    title: 'How to Stop Worrying & Start Living',
+    imgUrl: './book6.jpg',
+    price: 155,
+    category: 'bestsellers',
+  },
+  
+  {
+    id: 39,
+    title: 'How to Stop Worrying & Start Living',
+    imgUrl: './book6.jpg',
+    price: 155,
+    category: 'bestsellers',
+  },
+  
+  {
+    id: 40,
+    title: 'How to Stop Worrying & Start Living',
+    imgUrl: './book6.jpg',
+    price: 155,
+    category: 'bestsellers',
+  },{
+    id: 41,
+    title: 'Being Human EBOOKS of Synthetic Paper | Book Lovers Gift | Gift for Readers| Pack of 5',
+    imgUrl: './bmh2.jpeg',
+    price: 199,
+    category: 'EBOOKS',
+  },
+  {
+    id: 42,
+    title: 'Being Human EBOOKS of Synthetic Paper | Book Lovers Gift | Gift for Readers| Pack of 5',
+    imgUrl: './bmh1.jpeg',
+    price: 199,
+    category: 'EBOOKS',
+  },
+
+
+  {
+    id: 43,
+    title: 'A brief bestsellers of modern India (Spectrum)',
+    imgUrl: './book1.jpg',
+    price: 230,
+    category: 'bestsellers',
+  },
+  {
+    id: 44,
+    title: 'Alibaba',
+    imgUrl: './book2.jpg',
+    price: 199,
+    category: 'bestsellers',
+  },
+  {
+    id: 45,
+    title: 'Archer (Hardcover)',
+    imgUrl: './book3.jpg',
+    price: 199,
+    category: 'bestsellers',
+  },
+  {
+    id: 46,
+    title: 'DO EPIC SHIT Hardcover',
+    imgUrl: './book4.jpg',
+    price: 239,
+    category: 'bestsellers',
+  },
+  {
+    id: 47,
+    title: 'Hooked Hardcover',
+    imgUrl: './book5.jpg',
+    price: 219,
+    category: 'bestsellers',
+  },
+  {
+    id: 48,
+    title: 'How to Stop Worrying & Start Living',
+    imgUrl: './book6.jpg',
+    price: 155,
+    category: 'bestsellers',
+  },
+  
+  {
+    id: 49,
+    title: 'How to Stop Worrying & Start Living',
+    imgUrl: './book6.jpg',
+    price: 155,
+    category: 'bestsellers',
+  },
+  
   
 ];
 

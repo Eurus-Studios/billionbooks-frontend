@@ -38,7 +38,7 @@ const Home = () => {
           <button className=" my-3 herobtn hover:bg-indigo-900"> Shop Now</button>
         </div>
         <div className={styles.item}>
-          <img src="/heroimg.png" alt="hero img" />
+          <img src="/heroImg.png" alt="hero img" />
         </div>
       </div>
  
