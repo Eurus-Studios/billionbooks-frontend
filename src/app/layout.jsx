@@ -4,6 +4,11 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import MobileNav from '@/components/MobileNav';
+import Ft from "@/components/Ft";
+
+import StickySocials from '@/components/StickySocials';
+
+
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,14 +21,11 @@ export default function RootLayout({ children }) {
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
-    // Update window width on initial load
+    
     setWindowWidth(window.innerWidth);
 
-    // Update window width on window resize
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
-
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
     };
@@ -34,9 +36,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+      
         {isMobile ? <MobileNav /> : <Navbar />}
+        <StickySocials />
         {children}
+        <Ft/>
+        
       </body>
     </html>
   );
+  
 }

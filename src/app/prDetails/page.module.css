@@ -1,0 +1,100 @@
+/* * Product section design starts */ 
+/* Assuming you have a container div with a class of "productBox" */
+.productBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 7px;
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .path {
+    color: #777; /* Gray color (#777) */
+    font-size: 16px; /* Font size of 12 pixels */
+    margin-bottom: 2px; /* Bottom margin of 3 pixels */
+    padding-top: 2px; /* Top padding of 2 pixels */
+  }
+  
+
+.point li {
+  font-family: var(--secondary-font);
+}
+
+.contentContainer {
+  padding: 0px 16px;
+  max-width: 596px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 8px;
+
+}
+
+/* Button styles */
+.btn {
+  background: var(--button-color);
+  font-family: var(--primary-font);
+  letter-spacing: 1px;
+}
+
+.title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 42px;
+}
+
+.tag {
+  z-index: 10;
+  padding: 5px 10px;
+  max-height: 25px;
+  margin-left: -48px;
+  margin-top: 25px;
+  left: auto;
+  font-size: 12px;
+  min-width: 50px;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.2;
+  background-color: var(--primary-color);
+  font-family: "Lato", sans-serif;
+}
+
+.price {
+  font-family: var(--secondary-font);
+}
+
+/* Magnify effect styles */
+.magnifying_img {
+  --zoom-factor: 2;
+}
+
+.imgbox {
+  padding: 0px 16px;
+  display: flex;
+  flex-direction: row;
+  
+
+}
+
+.figure {
+  width: 597px;
+  height: 611px;
+  overflow: hidden;
+  border: 3px solid #fff;
+  position: relative;
+  cursor: grab;
+}
+
+.figure img {
+  max-width: 100%;
+  min-width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none;
+}

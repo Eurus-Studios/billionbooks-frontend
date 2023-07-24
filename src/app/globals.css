@@ -90,7 +90,7 @@ body {
 }
 
 .imgbox {
-  padding: 0px 16px;
+  /* padding: 0px 16px; */
 }
 
 figure {
@@ -120,6 +120,16 @@ figure img {
   margin-bottom: 20px;
   position: relative;
 }
+
+.slider-menu button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px 20px;
+  transition: color 0.3s ease;
+}
+
 
 .slider-menu button {
   background: none;
@@ -194,6 +204,10 @@ figure img {
   transition: 0.3s ease;
   color: rgb(77, 77, 77);
   font-family: var(--primary-font);
+}
+.ichover{
+ width: calc(100% - 25px);
+ 
 }
 
 .tab-button::before {
@@ -293,14 +307,6 @@ figure img {
 }
 
 
-
-
-
-
-
-
-
-
 .browsee {
   color: rgb(255, 255, 255);
   height: 50px;
@@ -325,7 +331,7 @@ figure img {
   top: 0;
   left: -100%; /* Start the dropdown outside of the screen */
   height: 100%;
-  overflow-y: auto; /* Add scrollbar when content exceeds the menu height */
+  overflow-y: auto;  
   transition: left 0.3s ease-in-out; /* Add smooth sliding animation */
   z-index: 2; /* Make sure the menu appears above other elements */
 }
@@ -378,7 +384,7 @@ figure img {
   z-index: 50000;
 }
 .popinsfont{
-  font-family: var(--primary-color);
+  font-family: var(--primary-font)
 }
   .merrifont{
     font-family: var(--merri-font);
@@ -423,7 +429,7 @@ figure img {
 
 /* SideMenu.css */
 
-/* SideMenu.css */
+
 
 /* Basic styles for the side menu */
 .side-menu {
@@ -432,13 +438,13 @@ figure img {
   font-family: var(--secondary-font);
   
   top: 0;
-  left: -300px; /* Adjust this value based on your menu width */
+  left: -300px; /* 
   width: 300px; /* Adjust this value based on your menu width */
   height: 100%;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: left 0.3s ease-in-out;
-  z-index: 2; /* Ensure the side menu appears above the background overlay */
+  z-index: 2; 
 }
 
 /* Styles for the open state of the side menu */
@@ -453,8 +459,8 @@ figure img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Adjust the opacity as needed */
-  z-index: 1; /* Lower z-index to keep the background overlay below the side menu */
+  background-color: rgba(0, 0, 0, 0.6); 
+  z-index: 1; 
 }
 
 /* Styles for the list items */
@@ -474,7 +480,7 @@ figure img {
 
 /* Styles for the links inside the list items */
 .side-menu li a {
-  color: black ;/* Adjust the link color as needed */
+  color: black ;
   text-decoration: none;
   font-family: var(--secondary-font);
   font-size: 13px;
@@ -523,10 +529,145 @@ figure img {
   top: 0;
   z-index: 50000;
   background-color: #ffffff;
+  transition: all 0.3s ease;
 }
 
 .topSocials.sticky {
   position: sticky;
   top: 0;
+  transition: all 0.3s ease;
+}
+.social-title {
+  transition: all 0.3s ease;
 }
 
+
+/* globals.css */
+.hide-p {
+  display: none;
+}
+
+ul.sticky-left {
+  width: min-content; /* Set the ul width to fit its contents */
+}
+
+ul.sticky-left li:hover p {
+  display: inline-block;
+}
+
+ul.sticky-left li:hover svg {
+  width: 40px; /* Adjust the width of the icon when hovering */
+}
+
+
+.fbg{
+  background-color: #365493;
+}
+
+.tbg{
+  background-color: #3CF;
+}
+.mbg{
+ background-color:  #F89A1E;
+}
+
+.ibg{
+  background-color: #774430;
+}
+.wbg{
+  background-color: #1EBEA5;
+}
+
+
+.social-icon {
+  position: relative;
+}
+
+.social-title {
+  position: absolute;
+  left: 68px;
+  transform: translateX(-50%);
+  padding: 0rem 0.5rem;
+  background-color: inherit;
+  color: white;
+  font-size: 14px;
+  font-family: var(--secondary-font);
+  height: 36px;
+  width: 85px;
+  transition: all 0.3s ease;
+  display: none; /* Corrected from display: hidden; */
+  align-items: center;
+}
+
+
+
+
+/* To hide the title initially and show it on hover */
+.social-icon:hover .social-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.social-icon {
+  position: relative;
+}
+
+
+
+
+
+.vlr{
+  color: red;
+}
+
+
+.relative {
+  position: relative;
+}
+
+/* .border-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--button-color); 
+  transition: width 0.3s ease; 
+} */
+
+
+
+.af::after {
+  content: "";
+  position: absolute;
+  background: #081441;
+  width: 0%;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  transition: width 0.2s ease-in;
+}
+
+.af:hover::after {
+  width: 100%;
+  opacity: 1;
+}
+.af:active::after {
+  width: 100%;
+  opacity: 1;
+}
+
+
+
+/* ----shop by category section---- */
+.navv{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+    flex-wrap: wrap;
+    margin-right: calc(15px / -1);
+    margin-left: calc(15px / -1);
+    text-align: left;
+}

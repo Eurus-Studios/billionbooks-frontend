@@ -8,6 +8,8 @@ import {
   FaLinkedin,
   FaTelegram,
 } from "react-icons/fa";
+import Wrapper from "./Wrapper";
+import SectionSlider from "./SectionSlider";
 
 const point = () => {
   // State to manage the count of items
@@ -57,8 +59,9 @@ const point = () => {
 
   return (
     <>
+    <Wrapper>
       {/* Product section */}
-      <section className="mt-10 productBox flex flex-row flex-wrap mb-7">
+      <section className="mt-10 productBox flex flex-row gap-8 flex-wrap mb-7">
         {/* Product image and magnifying area */}
         <div className="imgbox flex flex-row">
           <figure id="magnifying_area">
@@ -187,6 +190,10 @@ const point = () => {
           </div>
         </div>
       </section>
+      <SectionSlider/>
+
+
+      </Wrapper>
     </>
   );
 };
