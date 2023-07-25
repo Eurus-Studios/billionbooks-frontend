@@ -385,6 +385,14 @@ export const Allcategories = [
   { id: 17, title: "bookmarks", url: "/categories/bookmarks", producCount: 19 },
   { id: 18, title: "Non bookmarks", url: "/categories/non-bookmarks", producCount: 53 },
   { id: 19, title: "Novel", url: "/categories/novel", producCount: 94 },
+  { id: 20, title: "Novel", url: "/categories/novel", producCount: 94 },
+  { id: 21, title: "Any books at 999", url: "/categories/999", producCount: 45 },
+  { id: 22, title: "Book boxes", url: "/categories/book-boxes", producCount: 67 },
+  { id: 23, title: "E-books", url: "/categories/e-books", producCount: 23 },
+  { id: 24, title: "Bestsellers", url: "/categories/bestsellers", producCount: 89 },
+  { id: 25, title: "Hardcover", url: "/categories/hardcover", producCount: 72 },
+  { id: 26, title: "Hindi books", url: "/categories/hindi-books", producCount: 34 },
+ 
 ];
 
 

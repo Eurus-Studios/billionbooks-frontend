@@ -667,7 +667,48 @@ ul.sticky-left li:hover svg {
   justify-content: center;
   align-items: center;
     flex-wrap: wrap;
-    margin-right: calc(15px / -1);
-    margin-left: calc(15px / -1);
+    margin: auto;
     text-align: left;
+    
+}
+
+.shoptitle{
+  font-size: 65px;
+}
+
+
+/* ???wallet design/// */
+
+.balancebox{
+
+  padding: 10px 12px;
+  border-radius: 6px;
+  background-color: #483DE0;
+  color: white;
+ 
+ 
+  
+
+  
+}
+
+.ptitle {
+  transform: translateX(-14.375rem) translateY(-50%);
+}
+
+
+.balcont{
+  background-color:#F6F5FD; 
+  padding: 0;
+    margin: 28px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #F6F5FD;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.active-tab {
+  background-color: #E5E3FA;
+  cursor: pointer; 
 }
