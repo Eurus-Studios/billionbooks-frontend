@@ -100,12 +100,18 @@ const MobileNav = () => {
                 <>
                   {navigationItems.map((item) => (
                     <div key={item.id}>
+                     <Link
+                  href={item.url}>
                       <li>
                         <button className="menu-item latofont text-sm flex" onClick={() => handleSubmenuToggle(item.id)}>
                           {item.title}
                           {item.submenu && (submenuState[item.id] ? <FiChevronUp /> : <FiChevronDown />)}
                         </button>
                       </li>
+
+                      </Link>
+
+                      
                       {item.submenu && submenuState[item.id] && (
                         <ul>
                           {item.submenu.map((subitem) => (

@@ -11,60 +11,71 @@ import Wrapper from './Wrapper';
 
 const FSection = () => {
 
-    const router = useRouter();
-    const [selectedCategory, setSelectedCategory] = useState("bookset");
-  
-    const handleClick = (product) => {
-      router.push(`/products/${product.id}?img=${product.imgUrl}&title=${product.title}&price=${product.price}`);
-    };
-  
-    const handleCategoryClick = (category) => {
-      setSelectedCategory(category);
-    };
-  
-    const filteredProducts = selectedCategory
-      ? productDetails.filter((product) => product.category === selectedCategory)
-      : productDetails;
-  return (
-    <Wrapper>
+  const router = useRouter();
+  const [selectedCategory, setSelectedCategory] = useState("bookset");
+  const [activeMenu, setActiveMenu] = useState("bookset");
 
-<h1 className="popinsfont text-xl text-center font-bold my-4">FEATURED  CATEGORIES</h1>
-       <div className="text-center pb-4 text-sm latofont">National & International Best Selling Collections</div>
-    <div className="flex justify-center  space-x-4 mb-4">
-      {/* Menu sections */}
-      <button
-        className={`p-2  font-bold popinsfont text-base uppercase ${
-          selectedCategory === "bookset" ? "border-b-2 border-blue-800" : "border-b-3 border-transparent"
-        }`}
-        onClick={() => handleCategoryClick("bookset")}
-      >
-        bookset
-      </button>
-      <button
-        className={`p-2  text-gray-600 hover:text-black font-bold popinsfont text-base uppercase  ${
-          selectedCategory === "hindibooks" ? "border-b-2 border-blue-800" : "border-b-3 border-transparent"
-        }`}
-        onClick={() => handleCategoryClick("hindibooks")}
-      >
-        hindibooks
-      </button>
-      <button
-        className={`p-2   text-gray-600 hover:text-black font-bold popinsfont text-base uppercase ${
-          selectedCategory === "hardcover" ? "border-b-2 border-blue-800" : "border-b-3 border-transparent"
-        }`}
-        onClick={() => handleCategoryClick("hardcover")}
-      >
-        hardcovers
-      </button>
-      <button
-        className={`p-2 rounded  text-gray-600 hover:text-black font-bold popinsfont text-base uppercase ${
-          selectedCategory === "EBOOKS" ? "border-b-2 border-blue-800" : "border-b-3 border-transparent"
-        }`}
-        onClick={() => handleCategoryClick("EBOOKS")}
-      >
-        EBOOKS
-      </button>
-    </div>
+
+   const handleClick = (product) => {
+    router.push(`/products/${product.id}`);
+  };
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+    setActiveMenu(category);
+  };
+
+  const filteredProducts = selectedCategory
+    ? productDetails.filter((product) => product.category === selectedCategory)
+    : productDetails;
+
+  return (
+    <Wrapper >
+      <section className="my-20">
+      <h1 className="  popinsfont text-xl text-center font-bold ">FEATURED  CATEGORIES</h1>
+      <div className="text-center pb-4 text-sm latofont">National & International Best Selling Collections</div>
+     
+     
+
+      <div className="flex justify-center space-x-4 mb-4">
+        <button
+          className={`relative af text-gray-600 hover:text-black transition-colors font-bold popinsfont text-base uppercase p-2 ${
+            activeMenu === "bookset" || !selectedCategory ? "activeaf" : ""
+          }`}
+          onClick={() => handleCategoryClick("bookset")}
+        >
+          bookset
+          {selectedCategory === "bookset" && <div className="border-line"></div>}
+        </button>
+        <button
+          className={`relative af text-gray-600 hover:text-black transition-colors font-bold popinsfont text-base uppercase p-2 ${
+            activeMenu === "hindibooks" ? "activeaf" : ""
+          }`}
+          onClick={() => handleCategoryClick("hindibooks")}
+        >
+          Book Combos
+          {selectedCategory === "hindibooks" && <div className="border-line"></div>}
+        </button>
+        <button
+          className={`relative af text-gray-600 hover:text-black transition-colors font-bold popinsfont text-base uppercase p-2 ${
+            activeMenu === "hardcover" ? "activeaf" : ""
+          }`}
+          onClick={() => handleCategoryClick("hardcover")}
+        >
+          hardcovers
+          {selectedCategory === "hardcover" && <div className="border-line"></div>}
+        </button>
+        <button
+          className={`relative af text-gray-600 hover:text-black transition-colors font-bold popinsfont text-base uppercase p-2 ${
+            activeMenu === "EBOOKS" ? "activeaf" : ""
+          }`}
+          onClick={() => handleCategoryClick("EBOOKS")}
+        >
+          EBOOKS
+          {selectedCategory === "EBOOKS" && <div className="border-line"></div>}
+        </button>
+      </div>
+
 
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-8 md:m-auto xl:grid-cols-6 ">
      
@@ -106,6 +117,8 @@ const FSection = () => {
         </div>
       ))}
     </div>
+
+    </section>
   </Wrapper>
   )
 }

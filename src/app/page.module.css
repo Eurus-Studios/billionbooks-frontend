@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap');
 
 .container {
     display: flex;
@@ -14,10 +16,9 @@
     flex-wrap: wrap;
   }
   .content {
-    /* Add styles to control the spacing and wrapping of text content */
-    flex: 1; /* This allows the content to grow and occupy available space */
-    max-width: 50%; /* Adjust this value to control the maximum width of the content */
-  }
+    
+    flex: 1; 
+    max-width: 50%;}
   
   .item {
     flex: 1;
@@ -31,16 +32,16 @@
   .herotitle{
     color: rgb(0, 0, 0);
     text-decoration: none;
+
+    font-family: 'Noto Sans', sans-serif;
    
     
     text-align: left;
-    line-height: 59px;
+    line-height: 51px;
     letter-spacing: 0px;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 47px;
-    /* transform-origin: 50% 50%;
-
-    transform: translate(0px, 0px); */
+    
     margin-bottom: 25px;
 
   }

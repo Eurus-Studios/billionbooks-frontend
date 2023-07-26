@@ -660,6 +660,18 @@ ul.sticky-left li:hover svg {
 }
 
 
+.activeaf::after{
+  content: "";
+  position: absolute;
+  background: #081441;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  transition: width 0.2s ease-in;
+
+}
+
 
 /* ----shop by category section---- */
 .navv{

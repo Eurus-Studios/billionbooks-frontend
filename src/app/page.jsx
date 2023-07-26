@@ -1,15 +1,10 @@
 import React from "react";
-import Image from "next/image";
+
 import styles from "./page.module.css";
 import Fcategories from "@/components/Fcategories";
 import ProductCard from "@/components/ProductCard";
-import Product from "@/components/ProductDetails";
-import Ft from "@/components/Ft";
+
 import FSection from "@/components/FSectaion2";
-import SectionSlider from "@/components/SectionSlider";
-
-
-
 
 const Home = () => {
   return (
@@ -25,38 +20,31 @@ const Home = () => {
             <p className="text-lg pt-2 merrifont">
               Free Shipping On PrePaid Orders Across India.
             </p>
-          
           </div>
 
           <p className="text-sm pt-3 my-4 ">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia aspernatur voluptas quos repellendus, saepe
-              voluptatibus facilis sapiente. Ex reprehenderit, minus voluptatum, <br /> beatae eum inventore iste, id eius pariatur nam porro. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, laboriosam.
-
-             
-             
-            </p>
-          <button className=" my-3 herobtn hover:bg-indigo-900"> Shop Now</button>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia
+            aspernatur voluptas quos repellendus, saepe voluptatibus facilis
+            sapiente. Ex reprehenderit, minus voluptatum, <br /> beatae eum
+            inventore iste, id eius pariatur nam porro. Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Nulla, laboriosam.
+          </p>
+          <button className=" my-3 herobtn hover:bg-indigo-900">
+            {" "}
+            Shop Now
+          </button>
         </div>
         <div className={styles.item}>
           <img src="/heroImg.png" alt="hero img" />
         </div>
       </div>
- 
-      <div className="w-90% bg-slate-800 h-10">
 
-      </div>
+      <div className="w-90% bg-slate-800 h-10"></div>
 
-      <Fcategories/>
+      <Fcategories />
       <ProductCard />
-      
-      <FSection/>
-      <Product/>
-      <SectionSlider/>
-     
-     
-      
-      
 
+      <FSection />
     </section>
   );
 };

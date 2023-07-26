@@ -351,6 +351,28 @@ export const productDetails = [
     category: 'bestsellers',
   },
   
+
+  {
+    id: 50,
+    title: 'Books Combo (Atomic Habit ,The Subtle Art Not Giving A F*ck, Psychology of money)- Paperback',
+    imgUrl: './combo1.png',
+    price: 499,
+    category: 'bookset',
+  },
+  {
+    id: 51,
+    title: 'Books Combo (Atomic Habit , Psychology Of Money , Ikigai)- Paperback',
+    imgUrl: './combo2.png',
+    price: 499,
+    category: 'bookset',
+  },
+  {
+    id: 52,
+    title: 'Books Combo (Elon Musk , Steve Jobs, Shoe Dog)- Paperback ',
+    imgUrl: './combo3.png',
+    price: 499,
+    category: 'bookset',
+  },
   
 ];
 
@@ -481,6 +503,6 @@ export const navigationItems = [
   {
     id: 7,
     title: "MY WALLET",
-    url: "/wallet",
+    url: "/dashboard/wallet",
   },
 ];
