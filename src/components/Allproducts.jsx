@@ -1,28 +1,33 @@
+"use client"
+
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import productDetails from './data';
-
 import { PiShoppingCartLight } from 'react-icons/pi';
 import { VscHeart } from 'react-icons/vsc';
 import { BsSearch } from 'react-icons/bs';
 import Wrapper from './Wrapper';
 
-const Allproducts = () => {
+const Allproducts = ({ category }) => {
   const router = useRouter();
 
   const handleClick = (product) => {
     router.push(`/products/${product.id}`);
   };
 
+ 
+  const filteredProducts = category
+    ? productDetails.filter((product) => product.category.toLowerCase() === category.toLowerCase())
+    : productDetails; 
+
   return (
     <Wrapper>
 
-<div className="shoppath my-8">Home/ <strong>Shop</strong></div>
-      
+      <div className="shoppath my-8">Home / Shop {category && <strong>{category}</strong>}</div>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-8 md:m-auto xl:grid-cols-6 ">
-        {/* Mapping and displaying all products */}
-        {productDetails.map((product) => (
+        {/* Mapping and displaying filtered products */}
+        {filteredProducts.map((product) => (
           <div key={product.id} className="relative group" onClick={() => handleClick(product)}>
             <Link href={`/products/${product.id}`}>
               <div className="relative">

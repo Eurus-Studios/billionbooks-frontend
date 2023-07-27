@@ -1,9 +1,8 @@
-/* * Product section design starts */ 
-/* Assuming you have a container div with a class of "productBox" */
+
 .productBox {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     margin-bottom: 7px;
     margin-top: 10px;
     justify-content: center;
@@ -11,7 +10,7 @@
 
   .path {
     color: #777; /* Gray color (#777) */
-    font-size: 16px; /* Font size of 12 pixels */
+    font-size: 16px; 
     margin-bottom: 2px; /* Bottom margin of 3 pixels */
     padding-top: 2px; /* Top padding of 2 pixels */
   }
@@ -28,6 +27,8 @@
   flex-direction: column;
   flex-wrap: wrap;
   margin-top: 8px;
+  
+  
 
 }
 
@@ -90,7 +91,7 @@
 
 .figure img {
   max-width: 100%;
-  min-width: 100%;
+  /* min-width: 100%; */
   position: absolute;
   left: 50%;
   top: 50%;
@@ -98,3 +99,28 @@
   z-index: 10;
   pointer-events: none;
 }
+
+
+@media (max-width: 851px) {
+  .productBox {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  /* .figure{
+    height: 450px;
+    width: 500px;
+  } */
+  
+}
+
+@media (max-width: 961px) {
+  
+ 
+  .figure{
+    height: 480px;
+    width: 450px;
+  }
+  
+}
+

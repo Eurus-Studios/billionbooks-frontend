@@ -12,8 +12,8 @@ import Wrapper from './Wrapper';
 const ProductCard = () => {
   const router = useRouter();
  
-  const [selectedCategory, setSelectedCategory] = useState("bestsellers");
-  const [activeMenu, setActiveMenu] = useState("bestsellers"); // New state variable
+  const [selectedCategory, setSelectedCategory] = useState("BESTSELLERS");
+  const [activeMenu, setActiveMenu] = useState("BESTSELLERS"); 
 
   const handleClick = (product) => {
     router.push(`/products/${product.id}`);
@@ -34,12 +34,12 @@ const ProductCard = () => {
       <div className="flex justify-center space-x-4 mb-4">
         <button
           className={`relative af text-gray-600 hover:text-black transition-colors font-bold popinsfont text-base uppercase p-2 ${
-            activeMenu === "bestsellers" || !selectedCategory ? "activeaf" : ""
+            activeMenu === "BESTSELLERS" || !selectedCategory ? "activeaf" : ""
           }`}
-          onClick={() => handleCategoryClick("bestsellers")}
+          onClick={() => handleCategoryClick("BESTSELLERS")}
         >
-          Bestsellers
-          {selectedCategory === "bestsellers" && <div className="border-line"></div>}
+          BESTSELLERS
+          {selectedCategory === "BESTSELLERS" && <div className="border-line"></div>}
         </button>
         <button
           className={`relative af text-gray-600 hover:text-black transition-colors font-bold popinsfont text-base uppercase p-2 ${

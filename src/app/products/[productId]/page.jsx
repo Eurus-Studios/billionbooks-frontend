@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 
 import { productDetails } from "@/components/data.js";
 import PDetails from "@/app/prDetails/page";
