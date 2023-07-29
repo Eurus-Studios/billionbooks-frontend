@@ -13,18 +13,18 @@ import {
 import styles from './page.module.css';
 import Wrapper from '@/components/Wrapper';
 import SectionSlider from '@/components/SectionSlider';
+import { useStateContext } from '@/context/StateContext';
+
 const PDetails = ({ productId, img, title, price }) => {
-  const [count, setCount] = useState(1);
 
-  const decrementCount = () => {
-    if (count > 1) {
-      setCount((prevCount) => prevCount - 1);
-    }
-  };
+// const PDetails = ({ productId, img, title, price }) => {
+  // const [count, setCount] = useState(1);
+  const {decQty, incQty, qty,onAdd}= useStateContext();
 
-  const incrementCount = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
+  const handleCart=()=>{
+    console.log("Clicked add")
+    onAdd({title,price,img},qty);
+  }
 
   useEffect(() => {
     const magnifying_area = document.getElementById('magnifying_area');
@@ -119,19 +119,20 @@ const PDetails = ({ productId, img, title, price }) => {
 
             <div className={`flex items-center cart mb-5 ${styles.cart}`}>
               <button
-                onClick={decrementCount}
+                onClick={decQty}
                 className={`px-2 py-2 border border-gray-300 hover:bg-indigo-900 hover:text-white ${styles.button}`}
               >
                 -
               </button>
-              <div className="px-4 py-2 border-t border-b border-gray-300">{count}</div>
+              <div className="px-4 py-2 border-t border-b border-gray-300">{qty}</div>
               <button
-                onClick={incrementCount}
+                onClick={incQty}
                 className={`px-2 py-2 border border-gray-300 hover:bg-indigo-900 hover:text-white ${styles.button}`}
               >
                 +
               </button>
               <button
+              onClick={()=>handleCart()}
                 className={`ml-4 px-4 py-2 uppercase text-sm font-bold btn hover:bg-indigo-900 text-white ${styles.btn}`}
               >
                 Add To Cart

@@ -5,8 +5,8 @@ import Ft from "@/components/Ft";
 
 import StickySocials from '@/components/StickySocials';
 import CombinedNav from '@/components/CombinedNav';
-
-
+import { StateContext } from '../context/StateContext';
+import { Toaster  } from 'react-hot-toast';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,9 +17,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+
+    <StateContext>
     <html lang="en">
       <body className={inter.className}>
-      
+      <Toaster/>
         <CombinedNav/>
         <StickySocials />
         {children}
@@ -27,6 +29,7 @@ export default function RootLayout({ children }) {
         
       </body>
     </html>
+    </StateContext>
   );
   
 }

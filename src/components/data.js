@@ -61,14 +61,14 @@ export const productDetails = [
     id: 9,
     title: 'Books Combo (Elon Musk , Steve Jobs, Shoe Dog)- Paperback ',
     imgUrl: './combo3.png',
-    price: 499,
+    price: 1099,
     category: 'bookcombos',
   },
   {
     id: 10,
     title: 'Animals Book Sleeves - Dust Cover For Your Book',
     imgUrl: './s1.jpeg',
-    price: 299,
+    price: 1299,
     category: 'booksleeves',
   },
   {

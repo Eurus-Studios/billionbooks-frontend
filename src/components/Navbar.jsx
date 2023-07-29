@@ -17,12 +17,12 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
-
+import { useStateContext } from '@/context/StateContext';
+import Cart from "./Cart";
 const Navbar = () => {
-
-
-
+  const {totalQuantities, setShowCart,showCart}= useStateContext();
   const [isSticky, setIsSticky] = useState(false);
+
 
 const handleScroll = () => {
   setIsSticky(true);
@@ -96,13 +96,13 @@ useEffect(() => {
             <div className="text-black">Login/Register</div>
             <div className="relative">
               <div className="absolute top--2 left-4 w-3 h-3 bg-indigo-900 text-white flex items-center justify-center text-xs rounded-full">
-                5 {/* Replace this number with the actual count */}
+                5
               </div>
               <VscHeart style={{ fontSize: "24px" }} />
             </div>
-            <div className="relative">
-              <div className="absolute top--2 left-4  w-3 h-3 bg-indigo-900 text-white flex items-center justify-center text-xs rounded-full">
-                1 {/* Replace this number with the actual count */}
+            <div className="relative" onClick={()=>{setShowCart(true); console.log("cart show clicked")}}>
+              <div className="absolute top--2 left-4  w-3 h-3 bg-indigo-900 text-white flex items-center justify-center text-xs rounded-full" >
+              {totalQuantities}
               </div>
               <LiaShoppingBagSolid style={{ fontSize: "24px" }} />
             </div>
@@ -159,7 +159,7 @@ useEffect(() => {
       </div>
       {/* bottom navbar ends */}
 
-      
+      {showCart && <Cart />}
     </>
   );
 };

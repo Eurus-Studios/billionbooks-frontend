@@ -22,7 +22,7 @@ const ProductCard = () => {
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
     setActiveMenu(category);
-  };
+  }; 
 
   const filteredProducts = selectedCategory
     ? productDetails.filter((product) => product.category === selectedCategory)
