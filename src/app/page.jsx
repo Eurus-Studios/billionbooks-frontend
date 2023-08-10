@@ -1,8 +1,10 @@
+"use client"
+
 import React from "react";
 
 import styles from "./page.module.css";
 import Fcategories from "@/components/Fcategories";
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/components/ProductCard"
 
 import FSection from "@/components/FSectaion2";
 
@@ -34,8 +36,8 @@ const Home = () => {
             Shop Now
           </button>
         </div>
-        <div className={styles.item}>
-          <img src="/heroImg.png" alt="hero img" />
+        <div className={styles.imagecontainer}>
+          <img className={styles.img} src="/heroImg.png" alt="hero img" />
         </div>
       </div>
 
@@ -43,8 +45,12 @@ const Home = () => {
 
       <Fcategories />
       <ProductCard />
+      
+     
 
       <FSection />
+
+    
     </section>
   );
 };

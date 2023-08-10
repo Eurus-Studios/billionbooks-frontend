@@ -10,9 +10,14 @@
 
   .path {
     color: #777; /* Gray color (#777) */
-    font-size: 16px; 
+    
     margin-bottom: 2px; /* Bottom margin of 3 pixels */
     padding-top: 2px; /* Top padding of 2 pixels */
+    
+  font-size: 13px;
+  font-family: var(--secondary-font);
+
+
   }
   
 

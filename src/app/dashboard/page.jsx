@@ -36,7 +36,7 @@ const dashboard = () => {
               DOWNLOADS
             </div>
           </Link>
-          <Link href="/dashboard/addresses">
+          <Link href="/dashboard/address">
             <div className="bluebg p-4 flex flex-col items-center justify-center cursor-pointer">
               <VscLocation className="mb-2.5 hover:text-gray-500 transition-colors" style={{ fontSize: "45px" }} />
               ADDRESSES

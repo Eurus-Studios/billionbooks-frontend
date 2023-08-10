@@ -202,28 +202,28 @@ export const productDetails = [
     title: 'Animal E-BOOKS of Synthetic Paper | Book Lovers Gift | Gift for Readers| Pack of 5',
     imgUrl: './bm1.jpeg',
     price: 230,
-    category: 'E-BOOKS',
+    category: 'MERCHANDISE',
   },
   {
     id: 30,
     title: 'Being Human E-BOOKS of Synthetic Paper | Book Lovers Gift | Gift for Readers| Pack of 5',
     imgUrl: './bm2.jpeg',
     price: 199,
-    category: 'E-BOOKS',
+    category: 'MERCHANDISE',
   },
   {
     id: 31,
     title: 'Being Human E-BOOKS of Synthetic Paper | Book Lovers Gift | Gift for Readers| Pack of 5',
     imgUrl: './bmh2.jpeg',
     price: 199,
-    category: 'E-BOOKS',
+    category: 'MERCHANDISE',
   },
   {
     id: 32,
     title: 'Being Human E-BOOKS of Synthetic Paper | Book Lovers Gift | Gift for Readers| Pack of 5',
     imgUrl: './bmh1.jpeg',
     price: 199,
-    category: 'E-BOOKS',
+    category: 'MERCHANDISE',
   },
 
 
@@ -289,14 +289,14 @@ export const productDetails = [
     title: 'Being Human E-BOOKS of Synthetic Paper | Book Lovers Gift | Gift for Readers| Pack of 5',
     imgUrl: './bmh2.jpeg',
     price: 199,
-    category: 'E-BOOKS',
+    category: 'MERCHANDISE',
   },
   {
     id: 42,
     title: 'Being Human E-BOOKS of Synthetic Paper | Book Lovers Gift | Gift for Readers| Pack of 5',
     imgUrl: './bmh1.jpeg',
     price: 199,
-    category: 'E-BOOKS',
+    category: 'MERCHANDISE',
   },
 
 
@@ -373,28 +373,66 @@ export const productDetails = [
     price: 499,
     category: 'bookset',
   },
+  {
+    id: 53,
+    title: 'A brief BESTSELLERS of modern India (Spectrum)',
+    imgUrl: './book1.jpg',
+    price: 230,
+    category: 'BESTSELLERS',
+  },
+  {
+    id: 54,
+    title: 'Alibaba',
+    imgUrl: './book2.jpg',
+    price: 199,
+    category: 'book-boxes',
+  },
+  {
+    id: 55,
+    title: 'Archer (Hardcover)',
+    imgUrl: './book3.jpg',
+    price: 199,
+    category: 'book-boxes',
+  },
+  {
+    id: 56,
+    title: 'DO EPIC SHIT Hardcover',
+    imgUrl: './book4.jpg',
+    price: 239,
+    category: 'book-boxes',
+  },
+  {
+    id: 57,
+    title: 'Hooked Hardcover',
+    imgUrl: './book5.jpg',
+    price: 219,
+    category: 'book-boxes',
+  },
+  {
+    id: 58,
+    title: 'How to Stop Worrying & Start Living',
+    imgUrl: './book6.jpg',
+    price: 155,
+    category: 'book-boxes',
+  },
+  
   
 ];
 
 
 export const Allcategories = [
-  { id: 1, title: "Any books at 999", url: "/categories/999", producCount: 45 },
-  { id: 2, title: "Book boxes", url: "/categories/book-boxes", producCount: 67 },
+  { id: 1, title: "Any 5 books at 999", url: "/categories/999", producCount: 45 },
+  { id: 2, title: "Ebooks", url: "/categories/e-books", producCount: 67 },
   { id: 3, title: "E-books", url: "/categories/e-books", producCount: 23 },
   { id: 4, title: "BESTSELLERS", url: "/categories/BESTSELLERS", producCount: 89 },
-  { id: 5, title: "Hardcover", url: "/categories/hardcover", producCount: 72 },
-  { id: 6, title: "Hindi books", url: "/categories/hindi-books", producCount: 34 },
-  { id: 7, title: "Bookmarks", url: "/categories/bookmarks", producCount: 56 },
-  { id: 8, title: "Book sleeves", url: "/categories/book-sleeves", producCount: 91 },
-  { id: 9, title: "bookmarks", url: "/categories/bookmarks", producCount: 12 },
-  { id: 10, title: "Non bookmarks", url: "/categories/non-bookmarks", producCount: 78 },
+  { id: 5, title: "Merchandise", url: "/categories/merchandise", producCount: 72 },
+  { id: 6, title: "Fiction", url: "/categories/fiction", producCount: 34 },
+  { id: 7, title: "Non-fiction", url: "/categories/non-fiction", producCount: 56 },
+  { id: 8, title: "Business & Economics", url: "/categories/business-ecocnomics", producCount: 91 },
+  { id: 9, title: "Finance/money", url: "/categories/finance-money", producCount: 12 },
+  { id: 10, title: "Hindi books", url: "/categories/hindi-bookmarks", producCount: 78 },
   { id: 11, title: "Novel", url: "/categories/novel", producCount: 38 },
-  {
-    id: 12,
-    title: "bookcombos & Economics",
-    url: "/categories/bookcombos-economics",
-    producCount: 85,
-  },
+  
   {
     id: 13,
     title: "Premium bookset Collection",
@@ -425,28 +463,64 @@ export default productDetails;
 
 
 export const categories = [
-  { id: 1, title: "Any books at 999", url: "/categories/999" },
-  { id: 2, title: "Book boxes", url: "/categories/book-boxes" },
-  { id: 3, title: "E-books", url: "/categories/e-books" },
-  { id: 4, title: "BESTSELLERS", url: "/categories/BESTSELLERS" },
-  { id: 5, title: "Hardcover", url: "/categories/hardcover" },
-  { id: 6, title: "Hindi books", url: "/categories/hindi-books" },
-  { id: 7, title: "Bookmarks", url: "/categories/bookmarks" },
-  { id: 8, title: "Book sleeves", url: "/categories/book-sleeves" },
-  { id: 9, title: "bookmarks", url: "/categories/bookmarks" },
-  { id: 10, title: "Non bookmarks", url: "/categories/non-bookmarks" },
-  { id: 11, title: "Novel", url: "/categories/novel" },
-  {
-    id: 12,
-    title: "bookcombos & Economics",
-    url: "/categories/bookcombos-economics",
-  },
-  {
-    id: 13,
-    title: "Premium bookset Collection",
-    url: "/categories/premium-bookset",
-  },
+  { id: 1, title: "Any 5 books at 999", url: "/categories/999", producCount: 45 },
+  { id: 3, title: "E-books", url: "/categories/e-books", producCount: 23 },
+{
+      id: 2,
+      title: "Mangas",
+      url: "/categories/mangas",
+      producCount: 23,
+      subcategories: [
+        { id: 991, title: "Death Note", url: "/categories/mangas/death-note", producCount: 1 },
+        { id: 992, title: "One Piece", url: "/categories/mangas/one-piece", producCount: 1 },
+        { id: 993, title: "Dragon Ball", url: "/categories/mangas/dragon-ball", producCount: 1 },
+        { id: 994, title: "Chainsaw Man", url: "/categories/mangas/chainsaw-man", producCount: 1 },
+        { id: 995, title: "Naruto", url: "/categories/mangas/naruto", producCount: 1 },
+        { id: 996, title: "Demon Slayer: Kimetsu no Yaiba", url: "/categories/mangas/demon-slayer", producCount: 1 },
+      ]
+    },
+    { id: 4, title: "Bestsellers", url: "/categories/bestsellers", producCount: 89 },
+    { id: 5, title: "Merchandise", url: "/categories/merchandise", producCount: 72 },
+    {
+      id: 6,
+      title: "Fiction",
+      url: "/categories/fiction",
+      producCount: 34,
+      subcategories: [
+        { id: 61, title: "Romance", url: "/categories/fiction/romance", producCount: 15 },
+        { id: 62, title: "Crime, Thriller & Mystery", url: "/categories/fiction/crime-thriller", producCount: 20 },
+        { id: 63, title: "Young Adult", url: "/categories/fiction/Young-Adult", producCount: 20 },
+        { id: 64, title: "Fantasy & Drama", url: "/categories/fiction/Fantasy&drama", producCount: 20 },
+        { id: 65, title: "Science Fiction", url: "/categories/fiction/Science-Fiction", producCount: 20 },
+        { id: 65, title: "Childrern Fiction", url: "/categories/fiction/children-Fiction", producCount: 20 },
+        
+        
+      ]
+    },
+    { id: 7, title: "Non-fiction", url: "/categories/non-fiction", producCount: 56 },
+    { id: 8, title: "Business & Economics", url: "/categories/business-ecocnomics", producCount: 91 },
+    { id: 9, title: "Finance/money", url: "/categories/finance-money", producCount: 12 },
+    { id: 10, title: "Hindi books", url: "/categories/hindi-bookmarks", producCount: 78 },
+    {
+      id: 11,
+      title: "Premium bookset Collection",
+      url: "/categories/premium-bookset-collection",
+      producCount: 38,
+      subcategories: [
+        { id: 111, title: "Harry Potter Box Set", url: "/categories/premium-bookset-collection/harry-potter", producCount: 1 },
+        { id: 112, title: "The Wimpy Kid Book-set", url: "/categories/premium-bookset-collection/wimpy-kid", producCount: 1 },
+        { id: 113, title: "Hobbit & Lord Of The Rings", url: "/categories/premium-bookset-collection/hobbit-lotr", producCount: 1 },
+        { id: 114, title: "Percy Jackson Bookset", url: "/categories/premium-bookset-collection/percy-jackson", producCount: 1 },
+        { id: 115, title: "Agatha Christie", url: "/categories/premium-bookset-collection/agatha-christie", producCount: 1 },
+        { id: 116, title: "The Chronicles Of Narnia BookSet", url: "/categories/premium-bookset-collection/narnia", producCount: 1 },
+      ]
+    },
+  
+  
+ 
+
 ];
+
 
 export const navigationItems = [
   {
@@ -470,7 +544,7 @@ export const navigationItems = [
     url: "/pages",
     submenu: [
       { id: 41, title: "FAQS", url: "/pages/FAQs" },
-      { id: 42, title: "Contact Us", url: "/pages/Coctact US" },
+      { id: 42, title: "Contact Us", url: "/pages/Contact US" },
       { id: 43, title: "Disclaimer", url: "/pages/Disclaimer" },
       { id: 44, title: "Privacy Policy", url: "/pages/Privacy Policy" },
       { id: 45, title: "T&C", url: "/pages/T&C" },

@@ -543,6 +543,41 @@ figure img {
 }
 
 
+
+.slide-in-left {
+	-webkit-animation: slide-in-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+ @-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+
 /* globals.css */
 .hide-p {
   display: none;
@@ -812,14 +847,14 @@ padding: 20px 10px;
 }
 .product{
   display: flex;
- gap: 30px;
+ gap: 15px;
   padding: 20px;
   flex-direction: row;
 }
 .product .cart-product-image{
-  width:180px ;
-  height: 150px;
-    border-radius: 15px;
+ 
+  height: 80px;
+
  background-color: #ebebeb;
 }
 .item-desc .flex{
@@ -839,21 +874,207 @@ padding: 6px;
   padding: 6px 12px;
   cursor: pointer;
 }
-.quantity-desc .minus{
-  border-right: 1px solid gray;
-  color: #f02d34;
-}
-.quantity-desc .num{
-  border-right: 1px solid gray;
-  font-size: 20px;
-}
-.quantity-desc .plus{
-  color: rgb(49, 168, 49);
 
+
+
+.con{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 
 
+
+
+/* ****Slider*** */
+
+/* Google Fonts - Poppins */
+
+
+/* 
+.container {
+  max-width: 1120px;
+  width: 100%;
+  padding: 40px 0;
+}
+.slide-container {
+  margin: 0 30px;
+  overflow: hidden;
+}
+.card {
+  background: #fff;
+  border-radius: 8px;
+}
+.card .image-box {
+  height: 200px;
+}
+.card .image-box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px 8px 0 0;
+}
+.card .profile-details {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  padding: 15px;
+}
+.card .profile-details img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+.profile-details .name {
+  font-size: 15px;
+  font-weight: 500;
+}
+.profile-details .job {
+  font-size: 12px;
+  font-weight: 500;
+  color: #4d4d4d;
+}
+
+.swiper-navBtn {
+  color: #000;
+  height: 40px;
+  width: 40px;
+  background: #fff;
+  border-radius: 50%;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+  font-size: 18px;
+}
+
+.swiper-pagination-bullet {
+  background-color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  .swiper-navBtn {
+    display: none;
+  }
+} */
+
+
+
+.swiper {
+  width: 100%;
+  min-height: 420px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80% !important;
+}
+
+/* swiper-custom.css */
+
+/* Target the pagination container */
+.mySwiper .swiper-pagination {
+  margin-top: 20px;
+}
+
+
+.mySwiper .swiper-button-prev,
+.mySwiper .swiper-button-next {
+  display: none;
+  transition: all ease-in .3s;
+  color: white;
+  font-size: 10px;
+  height: 10px;
+  top: 150px !important;
+  
+}
+
+.swiper-button-prev:after, .swiper-button-next:after{
+  font-size: 28px !important;
+  transition: all ease-in .3s !important;
+}
+
+/* Show navigation arrows on hover */
+.mySwiper:hover .swiper-button-prev,
+.mySwiper:hover .swiper-button-next {
+  display: block;
+  transition: all ease-in .3s;
+}
+
+.ha{
+  position: relative;
+}
+.ha::after{
+  content: '';
+  position: absolute;
+  margin-top: 2px;
+  width: 44px;
+  height: 2px;
+  top: 44px;
+  left: 0;
+  background-color: #081441;
+
+
+
+}
+
+
+
+
+.dark-bag {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quick-view-box {
+  width: 950px;
+  height: 461px;
+  background-color: #fff; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 999999999999;
+}
+
+.quick-view-content {
+  padding: 20px;
+ 
+}
+
+.quick-view-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  /* Add more styles for the close button */
+}
+.slide-in-bottom {
+	-webkit-animation: slide-in-bottom 0.15s ease-in-out both;
+	        animation: slide-in-bottom 0.15s ease-in-out both;
+}
+
+
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 
 

@@ -1,0 +1,26 @@
+@media (max-width: 1070px) {
+  .cartBox{
+    width: 100%;
+    align-self: center;
+  }
+
+  .leftcont{
+    width: 100%;
+    align-self: center;
+  }
+
+  .outcont{
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+
+
+  }
+
+  .Cartimage{
+    height: 80px;
+    
+  }
+
+

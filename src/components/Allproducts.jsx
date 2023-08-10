@@ -22,15 +22,13 @@ const Allproducts = ({ category }) => {
 
   const handleSortChange = (option) => {
     setSortOption(option);
-    setFilterVisible(false); 
+    setFilterVisible(false);
   };
 
   const handlePriceRangeChange = (min, max) => {
     setPriceRange({ min, max });
-    setFilterVisible(false); 
+    setFilterVisible(false);
   };
-
- 
 
   const handleClick = (product) => {
     router.push(`/products/${product.id}`);
@@ -39,6 +37,13 @@ const Allproducts = ({ category }) => {
   let filteredProducts = category
     ? productDetails.filter((product) => product.category.toLowerCase() === category.toLowerCase())
     : productDetails;
+
+  if (filteredProducts.length === 0) {
+    // If no products found with the matching category, use the slug as title and filter by title
+    filteredProducts = productDetails.filter(
+      (product) => product.title.toLowerCase().includes(category.toLowerCase())
+    );
+  }
 
   if (sortOption === 'lowToHigh') {
     filteredProducts.sort((a, b) => a.price - b.price);
@@ -54,8 +59,10 @@ const Allproducts = ({ category }) => {
 
   return (
     <Wrapper>
+ 
+
       <div className="flex justify-between items-center mb-4">
-        <div className="shoppath my-8">Home / Shop {category && <strong>{category}</strong>}</div>
+        <div className="shoppath my-8">Home / Shop / {category && <strong>{category}</strong>}</div>
         <button
   onClick={toggleFilter}
   className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none"
@@ -64,6 +71,15 @@ const Allproducts = ({ category }) => {
 </button>
 
       </div>
+
+
+      {filteredProducts.length === 0 ? (
+        <div className="bluebg py-6  px-4 text-2xl text-gray-500">
+          No products were found for "{category}"
+        </div>
+      ) : ( 
+
+        <>
       
       <FilterMenu
   isVisible={filterVisible}
@@ -81,7 +97,7 @@ const Allproducts = ({ category }) => {
               onClick={() => setSortOption('')}
               className="ml-2 text-blue-500 hover:text-blue-700 focus:outline-none"
             >
-              &#10006;
+              
             </button>
           </div>
         )}
@@ -92,7 +108,7 @@ const Allproducts = ({ category }) => {
               onClick={() => setPriceRange({ min: 0, max: 0 })}
               className="ml-2 text-blue-500 hover:text-blue-700 focus:outline-none"
             >
-              &#10006;
+            
             </button>
           </div>
         )}
@@ -138,6 +154,8 @@ const Allproducts = ({ category }) => {
           </div>
         ))}
       </div>
+      </>
+      )}
     </Wrapper>
   );
 };

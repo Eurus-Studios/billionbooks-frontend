@@ -11,7 +11,7 @@ import {
 
 const StickySocials = () => {
   return (
-    <div className="fixed top-1/2 transform -translate-y-1/2 z-50">
+    <div className="fixed slide-in-left top-1/2  -translate-y-1/2 z-50">
       <ul className="flex flex-col items-center">
         <li className="social-icon flex items-center fbg">
           <a href="#" className="hover:text-blue-500 transition-all">

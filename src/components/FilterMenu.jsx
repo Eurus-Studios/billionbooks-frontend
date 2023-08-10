@@ -1,43 +1,42 @@
-"use client"
 import React from 'react';
 
 const FilterMenu = ({ isVisible, onToggle, onSortChange, onPriceRangeChange }) => {
   return (
-    <div className={`transition-all duration-300 ${isVisible ? 'h-30vh' : 'h-0'}`}>
-      <div className=" p-4">
-        <p>Sort By Price:</p>
-        <label>
+    <div className={`transition-all bg-white flex flex-row gap-20 rounded-md shadow-md p-4 duration-300 ${isVisible ? 'h-30vh overflow-hidden flex' : 'h-0 hidden'}`}>
+      
+
+        <div className="sort flex flex-col">
+        <p className='uppercase mb-4 font-bold popinsfont text-lg'>Sort By</p>
+        <label className='py-2'>
           <input type="radio" name="sort" onChange={() => onSortChange('lowToHigh')} />
-          Low to High
+           Low to High
         </label>
-        <label>
+        <label className='py-2'>
           <input type="radio" name="sort" onChange={() => onSortChange('highToLow')} />
-          High to Low
+           High to Low
         </label>
-        <p>Price Range:</p>
-        <label>
+
+        </div>
+
+        <div className="range flex flex-col">
+        <p className='uppercase font-bold popinsfont text-lg mb-4'>Price Range:</p>
+        <label className='py-2'>
           <input type="radio" name="priceRange" onChange={() => onPriceRangeChange(0, 500)} />
           0 - 500
         </label>
-        <label>
+        <label className='py-2'>
           <input type="radio" name="priceRange" onChange={() => onPriceRangeChange(500, 1000)} />
           500 - 1000
         </label>
-        <label>
+        <label className='py-2'>
           <input type="radio" name="priceRange" onChange={() => onPriceRangeChange(1000, 1500)} />
           1000 - 1500
         </label>
+        </div>
       </div>
 
-      {/* <button
-        className="bg-red-500 text-white px-4 py-2 rounded-md mt-4 mr-4 hover:bg-red-600 focus:outline-none"
-      >
-        Clear Filters
-      </button> */}
-
-
       
-    </div>
+   
   );
 };
 
