@@ -370,21 +370,21 @@ export const productDetails = [
     id: 52,
     title: 'Books Combo (Elon Musk , Steve Jobs, Shoe Dog)- Paperback ',
     imgUrl: './combo3.png',
-    price: 499,
+    price: 599,
     category: 'bookset',
   },
   {
     id: 53,
     title: 'A brief BESTSELLERS of modern India (Spectrum)',
     imgUrl: './book1.jpg',
-    price: 230,
+    price: 780,
     category: 'BESTSELLERS',
   },
   {
     id: 54,
     title: 'Alibaba',
     imgUrl: './book2.jpg',
-    price: 199,
+    price: 899,
     category: 'book-boxes',
   },
   {
@@ -463,44 +463,44 @@ export default productDetails;
 
 
 export const categories = [
-  { id: 1, title: "Any 5 books at 999", url: "/categories/999", producCount: 45 },
-  { id: 3, title: "E-books", url: "/categories/e-books", producCount: 23 },
+  { id: 1, title: "Any 5 books at 999", url: "/shop/Any-5-books-at-999", producCount: 45 },
+  { id: 3, title: "E-books", url: "/shop/e-books", producCount: 23 },
 {
       id: 2,
       title: "Mangas",
-      url: "/categories/mangas",
+      url: "/categories/shop/mangas",
       producCount: 23,
       subcategories: [
-        { id: 991, title: "Death Note", url: "/categories/mangas/death-note", producCount: 1 },
-        { id: 992, title: "One Piece", url: "/categories/mangas/one-piece", producCount: 1 },
-        { id: 993, title: "Dragon Ball", url: "/categories/mangas/dragon-ball", producCount: 1 },
-        { id: 994, title: "Chainsaw Man", url: "/categories/mangas/chainsaw-man", producCount: 1 },
-        { id: 995, title: "Naruto", url: "/categories/mangas/naruto", producCount: 1 },
-        { id: 996, title: "Demon Slayer: Kimetsu no Yaiba", url: "/categories/mangas/demon-slayer", producCount: 1 },
+        { id: 991, title: "Death Note", url: "/shop/death-note", producCount: 1 },
+        { id: 992, title: "One Piece", url: "/shop/one-piece", producCount: 1 },
+        { id: 993, title: "Dragon Ball", url: "/shop/dragon-ball", producCount: 1 },
+        { id: 994, title: "Chainsaw Man", url: "/shop/chainsaw-man", producCount: 1 },
+        { id: 995, title: "Naruto", url: "/shop/naruto", producCount: 1 },
+        { id: 996, title: "Demon Slayer: Kimetsu no Yaiba", url: "/shop/demon-slayer", producCount: 1 },
       ]
     },
-    { id: 4, title: "Bestsellers", url: "/categories/bestsellers", producCount: 89 },
-    { id: 5, title: "Merchandise", url: "/categories/merchandise", producCount: 72 },
+    { id: 4, title: "Bestsellers", url: "/shop/bestsellers", producCount: 89 },
+    { id: 5, title: "Merchandise", url: "/shop/merchandise", producCount: 72 },
     {
       id: 6,
       title: "Fiction",
-      url: "/categories/fiction",
+      url: "/shop/fiction",
       producCount: 34,
       subcategories: [
-        { id: 61, title: "Romance", url: "/categories/fiction/romance", producCount: 15 },
-        { id: 62, title: "Crime, Thriller & Mystery", url: "/categories/fiction/crime-thriller", producCount: 20 },
-        { id: 63, title: "Young Adult", url: "/categories/fiction/Young-Adult", producCount: 20 },
-        { id: 64, title: "Fantasy & Drama", url: "/categories/fiction/Fantasy&drama", producCount: 20 },
-        { id: 65, title: "Science Fiction", url: "/categories/fiction/Science-Fiction", producCount: 20 },
-        { id: 65, title: "Childrern Fiction", url: "/categories/fiction/children-Fiction", producCount: 20 },
+        { id: 61, title: "Romance", url: "/shop/romance", producCount: 15 },
+        { id: 62, title: "Crime, Thriller & Mystery", url: "/shop/crime-thriller", producCount: 20 },
+        { id: 63, title: "Young Adult", url: "/shop/Young-Adult", producCount: 20 },
+        { id: 64, title: "Fantasy & Drama", url: "/shop/Fantasy&drama", producCount: 20 },
+        { id: 65, title: "Science Fiction", url: "/shop/Science-Fiction", producCount: 20 },
+        { id: 65, title: "Childrern Fiction", url: "/shop/children-Fiction", producCount: 20 },
         
         
       ]
     },
-    { id: 7, title: "Non-fiction", url: "/categories/non-fiction", producCount: 56 },
-    { id: 8, title: "Business & Economics", url: "/categories/business-ecocnomics", producCount: 91 },
-    { id: 9, title: "Finance/money", url: "/categories/finance-money", producCount: 12 },
-    { id: 10, title: "Hindi books", url: "/categories/hindi-bookmarks", producCount: 78 },
+    { id: 7, title: "Non-fiction", url: "shop/non-fiction", producCount: 56 },
+    { id: 8, title: "Business & Economics", url: "categories/shop/business-ecocnomics", producCount: 91 },
+    { id: 9, title: "Finance/money", url: "/shop/finance-money", producCount: 12 },
+    { id: 10, title: "Hindi books", url: "/categories/shop/hindi-bookmarks", producCount: 78 },
     {
       id: 11,
       title: "Premium bookset Collection",
@@ -544,15 +544,15 @@ export const navigationItems = [
     url: "/pages",
     submenu: [
       { id: 41, title: "FAQS", url: "/pages/FAQs" },
-      { id: 42, title: "Contact Us", url: "/pages/Contact US" },
+      { id: 42, title: "Contact Us", url: "/pages/Contact-us" },
       { id: 43, title: "Disclaimer", url: "/pages/Disclaimer" },
-      { id: 44, title: "Privacy Policy", url: "/pages/Privacy Policy" },
-      { id: 45, title: "T&C", url: "/pages/T&C" },
-      { id: 46, title: "Return & Refund Policy", url: "/pages/Return & Refund Policy" },
+      { id: 44, title: "Privacy Policy", url: "/pages/privacy-policy" },
+      { id: 45, title: "T&C", url: "/pages/terms-condition" },
+      { id: 46, title: "Return & Refund Policy", url: "/pages/return-refund-policy" },
       {
         id: 47,
         title: "Shipping Policy & Delivery Timeline",
-        url: "/pages/Shipping Policy & Delivery Timeline",
+        url: "/pages/shipping-policy-delivery-timeline",
       },
       
      
@@ -577,6 +577,6 @@ export const navigationItems = [
   {
     id: 7,
     title: "MY WALLET",
-    url: "/dashboard/wallet",
+    url: "/dashboard/Wallet",
   },
 ];

@@ -71,6 +71,8 @@ const FSection = () => {
 
 
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-8 md:m-auto xl:grid-cols-6 ">
+
+   
      
 
     {filteredProducts.map((product) => (

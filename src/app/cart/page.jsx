@@ -86,6 +86,24 @@ const page = () => {
               </tbody>
             </table>
             <div className="border-t mt-2"></div>
+
+            <div className="flex my-2 gap-2 form w-96 self-end mb-5">
+              
+                <input
+                  type="text"
+                  placeholder="Coupon code"
+                  className={"w-full border mr-1 border-gray-300 px-4 py-2 h-10"}
+                />
+
+                <button
+                  className={"btn hover:bg-indigo-900 text-white px-2 py-2 h-10 w-48 text-xs font-bold uppercase "}
+                >
+                  Apply coupon
+                </button>
+                
+              </div>
+
+              
           </div>
         </div>
 

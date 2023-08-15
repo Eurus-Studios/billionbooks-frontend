@@ -10,12 +10,12 @@ export const StateContext = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
+  const [selectedSidebar, setSelectedSidebar] = useState("Dashboard");
 
   let foundProduct;
   let index;
 
   const onAdd = (product, quantity) => {
-    
     const checkProductInCart = cartItems.find(
       (item) => item._id === product._id
     );
@@ -24,8 +24,8 @@ export const StateContext = ({ children }) => {
       (prevTotalPrice) => prevTotalPrice + product.price * quantity
     );
     setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
-      console.log("Found in cart: ",checkProductInCart)
-      console.log("prev in cart: ",cartItems)
+    console.log("Found in cart: ", checkProductInCart);
+    console.log("prev in cart: ", cartItems);
     if (checkProductInCart) {
       const updatedCartItems = cartItems.map((cartProduct) => {
         if (cartProduct._id === product._id)
@@ -104,6 +104,8 @@ export const StateContext = ({ children }) => {
         totalPrice,
         totalQuantities,
         qty,
+        selectedSidebar,
+        setSelectedSidebar,
         incQty,
         decQty,
         onAdd,

@@ -1,16 +1,18 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { PiShoppingCartLight } from 'react-icons/pi';
-import { VscHeart } from 'react-icons/vsc';
-import { BsSearch } from 'react-icons/bs';
-import QuickView from './QuickView'; // Import the new QuickView component
+import React, { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { PiShoppingCartLight } from "react-icons/pi";
+import { VscHeart } from "react-icons/vsc";
+import { BsSearch } from "react-icons/bs";
+import QuickView from "./QuickView";
+import { useStateContext } from "@/context/StateContext";
 
 const BookCard = ({ product, onClick }) => {
   const router = useRouter();
   const [isQuickViewOpen, setQuickViewOpen] = useState(false);
+  const { onAdd, qty } = useStateContext();
 
   const handleQuickViewOpen = (event) => {
     event.stopPropagation();
@@ -19,6 +21,18 @@ const BookCard = ({ product, onClick }) => {
 
   const handleQuickViewClose = () => {
     setQuickViewOpen(false);
+  };
+
+  const handleCartClick = () => {
+    onAdd(
+      {
+        title: product.title,
+        price: product.price,
+        img: product.imgUrl,
+        id: product.id,
+      },
+      qty
+    );
   };
 
   const handleClick = () => {
@@ -37,9 +51,17 @@ const BookCard = ({ product, onClick }) => {
           {/* Icon bar */}
           <div className="absolute ichover bottom-2 left-3 h-10 bg-white opacity-0 transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all ease duration-300 justify-around flex items-center">
             <div className="flex items-center justify-around h-full">
-              <div className="p-4 cursor-pointer flex flex-col text-xl hover:text-gray-500">
+              <div
+                className="p-4 cursor-pointer flex flex-col text-xl hover:text-gray-500"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  handleQuickViewOpen();
+                  handleCartClick();
+                }}
+              >
                 <PiShoppingCartLight />
               </div>
+
               <div className="p-4 cursor-pointer flex flex-col text-xl hover:text-gray-500">
                 <VscHeart />
               </div>
@@ -60,7 +82,9 @@ const BookCard = ({ product, onClick }) => {
         {product.title}
       </div>
       <div className="text-base latofont text-center font-bold">
-        <span className="text-sm text-gray-400 line-through font-light pr-1">₹505</span>
+        <span className="text-sm text-gray-400 line-through font-light pr-1">
+          ₹505
+        </span>
         ₹{product.price}
       </div>
 

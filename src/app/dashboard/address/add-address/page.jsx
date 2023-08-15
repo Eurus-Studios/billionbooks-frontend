@@ -20,7 +20,7 @@ const page = () => {
 
 
   return (
-    <div className="p-6 max-w-md mx-auto bg-white rounded shadow-md">
+    <div className="p-6 max-w-full mx-auto bg-white rounded shadow-md">
       <h2 className="text-xl font-semibold mb-4">Shipping Address</h2>
       <form>
         <div className="mb-4">

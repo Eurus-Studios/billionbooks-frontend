@@ -26,6 +26,8 @@ const Navbar = () => {
 
   const router = useRouter(); 
 
+  
+
 
 
   const handleSearch = (event) => {
@@ -45,7 +47,7 @@ const Navbar = () => {
   
   const { wishlistCount } = useWishlistContext();
 
-  const { totalQuantities, setShowCart, showCart } = useStateContext();
+  const { totalQuantities,totalPrice, setShowCart, showCart } = useStateContext();
   const [isSticky, setIsSticky] = useState(false);
 
   const handleScroll = () => {
@@ -110,7 +112,7 @@ const Navbar = () => {
             className="w-full border border-gray-300 px-4 py-2 h-11"
           />
           <button
-            type="submit" // Use type="submit" for the search button
+            type="submit" 
             className="btn hover:bg-indigo-900 text-white px-2 py-2 h-11 w-10 text-lg font-bold uppercase"
           >
             <FaSearch />
@@ -144,7 +146,7 @@ const Navbar = () => {
               <LiaShoppingBagSolid style={{ fontSize: "24px" }} />
             </div>
 
-            <div className="price">$0</div>
+            <div className="price">${totalPrice}</div>
           </div>
         </div>
 

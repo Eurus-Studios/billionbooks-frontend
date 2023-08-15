@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Wrapper from '@/components/Wrapper';
+import Sidebar from '@/components/SidebarDB';
 
 const Layout = ({ children }) => {
   return (
@@ -9,14 +10,14 @@ const Layout = ({ children }) => {
 
       <div className="flex mt-16 flex-row">
    
-        <div className="sidemenu max-w-xs text-3xl"> MY ACCOUNT MENU INCOMING. <hr />
-        Wallet, account details design done. click on the icon to see
-        </div>
+        <Sidebar/>
 
         <div className="flex-grow">
 
         <main>
+          <div className='ml-6 mt-4'>
         {children}
+        </div>
       </main>
       </div>
 
