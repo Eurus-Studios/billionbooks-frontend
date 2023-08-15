@@ -15,7 +15,7 @@ const Sidebar = () => {
     { label: "Account details", link: "/dashboard/AccountDetails" },
     { label: "Request Replacement", link: "/dashboard/request-replacement" },
     { label: "Wallet", link: "/dashboard/Wallet" },
-    { label: "Wishlist", link: "/dashboard/wishlist" },
+    { label: "Wishlist", link: "/wishlist" },
     { label: "View POS", link: "/dashboard/view-pos" },
     { label: "Logout", link: "/dashboard/logout" },
     { label: "Delete Account", link: "/dashboard/delete-account" },

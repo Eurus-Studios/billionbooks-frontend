@@ -5,7 +5,7 @@ import { useWishlistContext } from "@/context/WishlistContext";
 import BookCard from "@/components/BookCard";
 import Wrapper from "@/components/Wrapper";
 import { VscHeart } from "react-icons/vsc";
-import Link from "next/link"; // Import Link from Next.js
+import Link from "next/link"; 
 
 const WishlistPage = () => {
   const { wishlistItems, removeFromWishlist } = useWishlistContext();
