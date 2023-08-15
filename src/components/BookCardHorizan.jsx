@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { PiShoppingCartLight } from 'react-icons/pi';
 import { VscHeart } from 'react-icons/vsc';
 import { BsSearch } from 'react-icons/bs';
-import QuickView from './QuickView'; // Import the new QuickView component
+import QuickView from '@/components/Quickview'; // Import the new QuickView component
 
 const BookCardHorizon = ({ product, onClick }) => {
   const router = useRouter();

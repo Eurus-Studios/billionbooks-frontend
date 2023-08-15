@@ -7,7 +7,7 @@ import { PiShoppingCartLight } from "react-icons/pi";
 import { VscHeart } from "react-icons/vsc";
 import { BsSearch } from "react-icons/bs";
 
-import QuickView from "./QuickView";
+import QuickView from "@/components/Quickview";
 import { useStateContext } from "@/context/StateContext";
 
 const BookCard = ({ product, onClick }) => {
