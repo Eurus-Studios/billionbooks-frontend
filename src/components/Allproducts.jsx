@@ -3,7 +3,7 @@
 import { AiOutlineMenu } from "react-icons/ai";
 
 import BookCardHorizon from "./BookCardHorizan";
-import BookCard from "./Bookcard";
+import BookCard from "./BookCard";
 
 // const Allproducts = ({ category }) => {
 //   const router = useRouter();

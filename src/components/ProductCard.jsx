@@ -7,7 +7,7 @@ import { PiShoppingCartLight } from "react-icons/pi";
 import { VscHeart } from "react-icons/vsc";
 import { BsSearch } from "react-icons/bs";
 import Wrapper from './Wrapper';
-import BookCard from './BookCard'; // Import the BookCard component
+import BookCard from './BookCard';
 
 const ProductCard = () => {
   const router = useRouter();

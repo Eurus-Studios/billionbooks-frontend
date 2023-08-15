@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { PiShoppingCartLight } from "react-icons/pi";
 import { VscHeart } from "react-icons/vsc";
 import { BsSearch } from "react-icons/bs";
+
 import QuickView from "./QuickView";
 import { useStateContext } from "@/context/StateContext";
 
