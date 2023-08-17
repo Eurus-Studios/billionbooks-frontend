@@ -12,12 +12,12 @@ export const WishlistStateContext = ({ children }) => {
 
   const removeFromWishlist = (product) => {
     setWishlistItems((prevWishlist) =>
-      prevWishlist.filter((item) => item._id !== product._id)
+      prevWishlist.filter((item) => item.id !== product.id)
     );
   };
 
   const isProductInWishlist = (product) => {
-    return wishlistItems.some((item) => item._id === product._id);
+    return wishlistItems.some((item) => item.id === product.id);
   };
 
   const wishlistCount = wishlistItems.length;

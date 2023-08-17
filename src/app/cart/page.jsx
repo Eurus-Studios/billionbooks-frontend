@@ -40,7 +40,7 @@ const page = () => {
               </thead>
               <tbody>
                 {cartItems.map((item, index) => (
-                  <tr key={item._id}>
+                  <tr key={item.id}>
                     <td className="p-2 text-center">
                     <button
                           type="button"
@@ -60,7 +60,7 @@ const page = () => {
                         <button
                           className="px-2 py-2 border border-gray-300 hover:bg-indigo-900 hover:text-white button"
                           onClick={() =>
-                            toggleCartItemQuanitity(item._id, "dec")
+                            toggleCartItemQuanitity(item.id, "dec")
                           }
                         >
                           <AiOutlineMinus />
@@ -71,7 +71,7 @@ const page = () => {
                         <button
                           className="px-2 py-2 border border-gray-300 hover:bg-indigo-900 hover:text-white button"
                           onClick={() =>
-                            toggleCartItemQuanitity(item._id, "inc")
+                            toggleCartItemQuanitity(item.id, "inc")
                           }
                         >
                           <AiOutlinePlus className="mt-1" />

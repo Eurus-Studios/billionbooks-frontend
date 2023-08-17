@@ -20,8 +20,29 @@ import { useRouter } from "next/navigation";
 
 import { useStateContext } from "@/context/StateContext";
 import { useWishlistContext } from "@/context/WishlistContext";
+import { UserAuth } from "@/context/AuthContext";
 import Cart from "./Cart";
 const Navbar = () => {
+  const {user, googleSignIn, logOut }= UserAuth();
+ 
+
+  const handleSignIn = async () => {
+    try {
+      await googleSignIn();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await logOut();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(user);
 
 
   const router = useRouter(); 
@@ -36,7 +57,7 @@ const Navbar = () => {
     const searchTerm = searchInput.value.trim();
   
     if (searchTerm !== '') {
-      // Construct the URL for the search results page
+     
       const searchUrl = `/Search/${encodeURIComponent(searchTerm)}`;
   
       // Redirect the user to the search results page
@@ -48,15 +69,19 @@ const Navbar = () => {
   const { wishlistCount } = useWishlistContext();
 
   const { totalQuantities,totalPrice, setShowCart, showCart } = useStateContext();
-  const [isSticky, setIsSticky] = useState(false);
 
-  const handleScroll = () => {
-    setIsSticky(true);
-  };
+
+
+  // **MAking navbar sticky on scroll **
+  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(true);
+      if (window.scrollY > 60) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -88,11 +113,9 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={"container mx-auto max-w-7xl"}>
+      <div className={`container mx-auto max-w-7xl `}>
         <div
-          className={`topbar md:flex md:items-center md:justify-between px-4 py-6 ${
-            isSticky ? "sticky" : ""
-          }`}
+          className={`topbar md:flex md:items-center md:justify-between px-4 py-6 ${isSticky ? "sticky slide-in-top " : ""}`}
         >
           {/* First div with logo */}
           <Link href="/">
@@ -123,7 +146,16 @@ const Navbar = () => {
 
           {/* Third div with login/register, wishlist, and shopping bag */}
           <div className="hidden md:flex md:items-center md:space-x-4">
-            <div className="text-black">Login/Register</div>
+
+            {!user?( <button className="text-black" onClick={handleSignIn}>Login/Register</button>
+          ) :(
+
+              <div className="cursor-pointer">
+                <p>My account</p>
+                <p onClick={handleSignOut}>SignOut</p>
+              </div>
+
+            )}
             <div className="relative">
               <div className="absolute top--2 left-4 w-3 h-3 bg-indigo-900 text-white flex items-center justify-center text-xs pb-0.5 rounded-full">
                 {wishlistCount}
@@ -137,7 +169,7 @@ const Navbar = () => {
               className="relative"
               onClick={() => {
                 setShowCart(true);
-                console.log("cart show clicked");
+                // console.log("cart show clicked");
               }}
             >
               <div className="absolute top--3 left-4 pb-0.5  w-3 h-3 bg-indigo-900 text-white flex items-center justify-center text-xs rounded-full">
@@ -172,23 +204,24 @@ const Navbar = () => {
   </div>
 
   {/* Navigation Items */}
-  <div className="flex flex-row">
-    {navigationItems.map((item) => (
-      <div key={item.id} className="group relative">
-        {/* Parent Menu Item */}
+<div className="flex flex-row">
+  {navigationItems.map((item, index) => (
+    <div key={item.id} className="group relative">
+      {/* Parent Menu Item */}
+      {!(index === 4 && user) && ( // Check if it's the 4th index and user is authenticated
         <Link
-          href={item.url}
+          href={index === 0 && user ? item.op2Url : item.url}
           className="text-black latofont text-xs hover:text-gray-600 px-4 py-2 font-bold"
         >
-          {item.title}
+          {index === 0 && user ? item.op2Title : item.title}
         </Link>
-        
-        {/* Box Menu for Submenu */}
-        {item.submenu && (
-          <div className="brow ">
-
-            <div className="mt-1.5 slide-in-bottom  w-52 z-20 hidden group-hover:block absolute bg-white text-gray-400 shadow-md ">
-            <ul >
+      )}
+      
+      {/* Box Menu for Submenu */}
+      {item.submenu && (
+        <div className="brow ">
+          <div className="mt-1.5 slide-in-bottom w-52 z-20 hidden group-hover:block absolute bg-white text-gray-400 shadow-md ">
+            <ul>
               {item.submenu.map((subitem) => (
                 <li key={subitem.id}>
                   <Link
@@ -200,13 +233,13 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-
-            </div>
           </div>
-        )}
-      </div>
-    ))}
-  </div>
+        </div>
+      )}
+    </div>
+  ))}
+</div>
+
 </div>
 
 

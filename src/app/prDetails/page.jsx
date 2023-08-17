@@ -8,6 +8,7 @@ import {
   FaLinkedin,
   FaTelegram,
 } from "react-icons/fa";
+import { VscHeart,VscCheck } from "react-icons/vsc";
 import {
   IoIosArrowForward, IoIosArrowBack
 } from "react-icons/io";
@@ -22,8 +23,14 @@ import {useRouter} from "next/navigation";
 import { useStateContext } from "@/context/StateContext";
 import { useWishlistContext } from "@/context/WishlistContext";
 import productDetails from "@/components/data";
+// import BookBoxPD from "@/components/BookBoxPD"
+import BookSelector from "@/components/BookBoxPD";
 
-const PDetails = ({ productId, img, title, price }) => {
+const PDetails = ({ productId, img, title, price, category }) => {
+
+  console.log(category);
+
+
 
   const [currentProductIndex, setCurrentProductIndex] = useState(-1);
 
@@ -31,21 +38,21 @@ const PDetails = ({ productId, img, title, price }) => {
   const findProductIndex = () => {
     const index = productDetails.findIndex((product, i) => {
       const parsedProductId = parseInt(productId, 10);
-      console.log("Index:", i, "has:", product.id, parsedProductId, product.id === parsedProductId);
+      // console.log("Index:", i, "has:", product.id, parsedProductId, product.id === parsedProductId);
       return product.id === parsedProductId;
     });
 
-    console.log(index);
+    // console.log(index);
     return index;
   };
   
 
   useEffect(() => {
     const index = findProductIndex();
-    console.log(index);
+    // console.log(index);
     setCurrentProductIndex(index);
 
-    console.log(index);
+    // console.log(index);
 
     
   }, [productId]);
@@ -75,7 +82,7 @@ const PDetails = ({ productId, img, title, price }) => {
   const { decQty, incQty, qty, onAdd } = useStateContext();
 
   const handleCart = () => {
-    console.log("Clicked add", title, productId);
+    // console.log("Clicked add", title, productId);
     onAdd({ title, price, img, id: productId }, qty);
   };
 
@@ -200,6 +207,16 @@ const PDetails = ({ productId, img, title, price }) => {
               </ul>
             </div>
 
+             {/* Render BookBoxPD component if the category is "book-box" */}
+             {category === "book-boxes" && (
+        <>
+          {/* <BookBoxPD /> */}
+          {[...Array(10)].map((_, index) => (
+            <BookSelector key={index} bookNumber={index + 1} />
+          ))}
+        </>
+      )}
+
             <div className={`lower pt-4 ${styles.lower}`}>
               <p className="mb-5">
                 <span className="font-bold">Replacement:</span> 2 days
@@ -229,12 +246,31 @@ const PDetails = ({ productId, img, title, price }) => {
                 </button>
               </div>
 
-              <p
-                className="cursor-pointer mb-4 hover:text-gray-500"
-                onClick={handleWishlistClick}
-              >
-                🤍 Add to wishlist
-              </p>
+              <div className="mb-5">
+        {isProductInWishlist({ id: productId }) ? (
+          <button
+            className={`px-4 py-2  font-bold `}
+          >
+            <div className="flex flex-row">
+              <VscCheck className="text-xl pr-1 mt-1 font-bold text-green-700"/>
+
+            Successfully Added to Wishlist
+            </div>
+            
+           
+          </button>
+        ) : (
+          <button
+            onClick={handleWishlistClick}
+            className={`px-4 py-2  font-bold`}
+          >
+            <div className="flex hover:text-gray-600">
+           <VscHeart className="text-xl"/> Add to Wishlist
+           </div>
+          </button>
+        )}
+      </div>
+
               <div className="mb-3 border-t border-gray-200"></div>
               <div className="flex flex-column">
                 <p className="mb-4 text-gray-500">
@@ -295,6 +331,8 @@ const PDetails = ({ productId, img, title, price }) => {
         <SectionSlider />
         
         <CardSlider/>
+
+      
       </Wrapper>
     </>
   );

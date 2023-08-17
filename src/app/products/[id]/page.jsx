@@ -21,6 +21,7 @@ const ProductDetailsPage = ({ params }) => {
       img={product?.imgUrl}
       title={product?.title}
       price={product?.price}
+      category={product?.category}
     />
     </>
   );

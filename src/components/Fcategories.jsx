@@ -25,7 +25,7 @@ const ResponsiveGridLayout = () => {
       onClick={redirectToBookBoxesPage}
       style={{ cursor: "pointer" }}
     >
-      <div className="h-auto flex flex-col justify-center items-center">
+      <div className="h-auto flex hov flex-col justify-center items-center">
         <div className="imgcont">
           <Image
             src="/bookbox.png"

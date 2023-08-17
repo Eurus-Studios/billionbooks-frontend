@@ -439,7 +439,7 @@ figure img {
   top: 0;
   left: -300px; /* 
   width: 300px; /* Adjust this value based on your menu width */
-  height: 100%;
+  height: 100vh;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: left 0.3s ease-in-out;
@@ -457,10 +457,19 @@ figure img {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.6); 
   z-index: 1000; 
 }
+
+
+
+.active {
+  background-color: #bababa; /* Darker background color */
+  border-bottom: 2px solid rgb(3, 3, 103); /* Blue border bottom */
+   
+}
+
 
 /* Styles for the list items */
 .side-menu ul {
@@ -508,8 +517,9 @@ figure img {
 .imgcont img {
   transition:all .5s ease;
   display: block;
-  transform: scale(1);
   -webkit-transform: scale(1);
+  transform: scale(1);
+  
 }
 .hov{
   cursor: pointer;
@@ -1061,6 +1071,7 @@ padding: 6px;
 }
 
 
+
 @keyframes slide-in-bottom {
   0% {
     -webkit-transform: translateY(10px);
@@ -1076,3 +1087,62 @@ padding: 6px;
 
 
 
+
+
+/* Add this to your CSS */
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 11px 107px;
+  z-index: 100000000; /* Adjust the z-index value as needed */
+  background-color: white; /* Set the background color for the sticky navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow for a raised effect */
+}
+
+.stickymob {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 11px 10px;
+  z-index: 100000000; /* Adjust the z-index value as needed */
+  background-color: white; /* Set the background color for the sticky navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow for a raised effect */
+  /* height: max-content; Remove this line */
+  height: auto; /* Use auto height to allow content to determine the height */
+}
+
+
+.slide-in-top {
+	-webkit-animation: slide-in-top 0.6s ease-in-out both;
+	        animation: slide-in-top 0.6s ease-in-out both;
+}
+
+
+
+ @-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}

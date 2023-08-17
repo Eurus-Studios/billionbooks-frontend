@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import { FiMenu } from "react-icons/fi";
 import { AiOutlineHome, AiOutlineShop, AiOutlineUser } from "react-icons/ai";
@@ -23,7 +23,7 @@ import {
 const MobileNav = () => {
 
     const [isMenuOpen, setMenuOpen] = useState(false);
-    const [currentSection, setCurrentSection] = useState('home');
+    const [currentSection, setCurrentSection] = useState('Menu');
     const [submenuState, setSubmenuState] = useState({});
   
     const handleMenuToggle = () => {
@@ -40,6 +40,26 @@ const MobileNav = () => {
         [itemId]: !prevState[itemId],
       }));
     };
+
+
+    // **Making navbar sticky on scroll **
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 30) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
 
@@ -65,7 +85,7 @@ const MobileNav = () => {
 
       </div>
     </div>
-    <div className="topbar flex items-center justify-between px-4 py-6">
+    <div className={`topbar overflow-y-visible h-auto overflow-visible flex items-center justify-between px-4 py-6 ${isSticky ? "stickymob slide-in-top " : ""}`}>
 
     <div>
           {/* Background overlay */}
@@ -77,17 +97,18 @@ const MobileNav = () => {
           </button>
     
           {/* Side menu */}
-          <div className={`side-menu ${isMenuOpen ? 'open' : ''}`}>
+          <div className={`side-menu w-72 ${isMenuOpen ? 'open' : ''}`} style={{ overflowY: "auto" }}>
             {/* Sections */}
-            <div className="sections  bg-gray-200 flex justify-between h-16 flex-row">
+            <div className="sections  bg-gray-200 flex justify-between flex-row">
+            <button
+  className={`menu-option uppercase ${currentSection === 'Menu' ? 'active' : ''} hover:text-black active:text-black flex-grow`}
+  onClick={() => handleSectionChange('Menu')}
+>
+  Menu
+</button>
+
               <button
-                className={`menu-option ${currentSection === 'home' ? 'active' : ''}hover:text-black active:text-black flex-grow  `}
-                onClick={() => handleSectionChange('home')}
-              >
-                Home
-              </button>
-              <button
-                className={`menu-option ${currentSection === 'categories' ? 'active' : ''}  hover:text-black active:text-black flex-grow text-gray-500 `}
+                className={`menu-option uppercase ${currentSection === 'categories' ? 'active' : ''}  hover:text-black active:text-black flex-grow text-gray-500 `}
                 onClick={() => handleSectionChange('categories')}
               >
                 Categories
@@ -96,7 +117,7 @@ const MobileNav = () => {
     
             {/* Menu items */}
             <ul>
-              {currentSection === 'home' && (
+              {currentSection === 'Menu' && (
                 <>
                   {navigationItems.map((item) => (
                     <div key={item.id}>
@@ -178,7 +199,7 @@ const MobileNav = () => {
 {/* -------fixed bottom menu---------- */}
 
 <div className="bottommenu ind">
-      <nav className="fixed bottom-0 left-0 w-full bg-white p-2 flex justify-around items-center border-t border-gray-300 md:hidden">
+      <nav className="fixed z-50 bottom-0 left-0 w-full bg-white p-2 flex justify-around items-center border-t border-gray-300 md:hidden">
         <a
           href="#"
           className="text-black hover:text-gray-600 transition-colors ease-in flex flex-col items-center"

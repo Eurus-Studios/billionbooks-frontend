@@ -1,6 +1,8 @@
 import React from 'react';
+import PDetails from '@/app/prDetails/page';
 
 const QuickView = ({ product, onClose }) => {
+  console.log(product)
   return (
     <div className="quick-view-container">
       <div className="quick-view-content">

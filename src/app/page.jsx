@@ -5,7 +5,6 @@ import React from "react";
 import styles from "./page.module.css";
 import Fcategories from "@/components/Fcategories";
 import ProductCard from "@/components/ProductCard"
-
 import FSection from "@/components/FSectaion2";
 
 const Home = () => {
@@ -49,6 +48,9 @@ const Home = () => {
      
 
       <FSection />
+
+      
+      
 
     
     </section>

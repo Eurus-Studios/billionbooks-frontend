@@ -525,8 +525,10 @@ export const categories = [
 export const navigationItems = [
   {
     id: 1,
-    title: "DASHBOARD",
-    url: "/dashboard",
+    title: "Home",
+    url: "/",
+    op2Title:"DASHBOARD",
+    op2Url:"/dashboard"
   },
   {
     id: 2,

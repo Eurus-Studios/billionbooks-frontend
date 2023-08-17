@@ -16,19 +16,19 @@ export const StateContext = ({ children }) => {
   let index;
 
   const onAdd = (product, quantity) => {
-    const checkProductInCart = cartItems.find(
-      (item) => item._id === product._id
-    );
+    const checkProductInCart = cartItems.find((item) => item.id === product.id);
 
     setTotalPrice(
       (prevTotalPrice) => prevTotalPrice + product.price * quantity
     );
     setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
-    console.log("Found in cart: ", checkProductInCart);
-    console.log("prev in cart: ", cartItems);
+    // console.log("checkproduct in cart", checkProductInCart);
+    // console.log("recievsd in cart: ", product,quantity);
+    // console.log("Found in cart: ", checkProductInCart);
+    // console.log("prev in cart: ", cartItems);
     if (checkProductInCart) {
       const updatedCartItems = cartItems.map((cartProduct) => {
-        if (cartProduct._id === product._id)
+        if (cartProduct.id === product.id)
           return {
             ...cartProduct,
             quantity: cartProduct.quantity + quantity,
@@ -46,8 +46,8 @@ export const StateContext = ({ children }) => {
   };
 
   const onRemove = (product) => {
-    foundProduct = cartItems.find((item) => item._id === product._id);
-    const newCartItems = cartItems.filter((item) => item._id !== product._id);
+    foundProduct = cartItems.find((item) => item.id === product.id);
+    const newCartItems = cartItems.filter((item) => item.id !== product.id);
 
     setTotalPrice(
       (prevTotalPrice) =>
@@ -60,9 +60,19 @@ export const StateContext = ({ children }) => {
   };
 
   const toggleCartItemQuanitity = (id, value) => {
-    foundProduct = cartItems.find((item) => item._id === id);
-    index = cartItems.findIndex((product) => product._id === id);
-    const newCartItems = cartItems.filter((item) => item._id !== id);
+    console.log("ID RECIEVED:", id, "ANds dasdqunautt:", value);
+    foundProduct = cartItems.find((item) => item.id === id);
+    index = cartItems.findIndex((product) => product.id === id);
+    const newCartItems = cartItems.filter((item) => item.id !== id);
+
+    console.log(
+      "foundProduct: ",
+      foundProduct,
+      "index: ",
+      index,
+      "newCartITEMS:",
+      newCartItems
+    );
 
     if (value === "inc") {
       setCartItems([

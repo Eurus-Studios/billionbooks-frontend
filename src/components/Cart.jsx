@@ -53,7 +53,7 @@ const Cart = () => {
           <div className="product-container">
             {cartItems.length >= 1 &&
               cartItems.map((item) => (
-                <div className="product" key={item._id}>
+                <div className="product" key={item.id}>
                   <img src={item.img} className="cart-product-image" />
                   <div className="item-desc">
                     <div className="flex flex-col top">
@@ -79,7 +79,7 @@ const Cart = () => {
                           <button
                             className="px-2 py-2 border border-gray-300 hover:bg-indigo-900 hover:text-white button"
                             onClick={() =>
-                              toggleCartItemQuanitity(item._id, "dec")
+                              toggleCartItemQuanitity(item.id, "dec")
                             }
                           >
                             <AiOutlineMinus />
@@ -93,7 +93,7 @@ const Cart = () => {
                           <span
                             className="px-2 py-2 border border-gray-300 hover:bg-indigo-900 hover:text-white button "
                             onClick={() =>
-                              toggleCartItemQuanitity(item._id, "inc")
+                              toggleCartItemQuanitity(item.id, "inc")
                             }
                           >
                             <AiOutlinePlus className="mt-1" />

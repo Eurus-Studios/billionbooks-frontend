@@ -37,13 +37,19 @@ const WishlistPage = () => {
           </div>
         ) : (
           <div>
-            <div className="my-4">
-              <button onClick={() => removeFromWishlist(product)}>Remove</button>
-            </div>
-
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-8 md:m-auto xl:grid-cols-6">
               {wishlistItems.map((product) => (
-                <div key={product._id}>
+
+                <div className="flex flex-col"> <button
+                onClick={() => removeFromWishlist(product)}
+                className=" m-2 px-2 py-1 bg-blue-500 text-white text-sm font-bold"
+              >
+                Remove
+              </button>
+              <div key={product.id} className="relative"></div>
+                
+                
+                 
                   <BookCard product={product} />
                 </div>
               ))}
