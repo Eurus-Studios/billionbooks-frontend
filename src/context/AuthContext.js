@@ -1,7 +1,6 @@
-"use client"
+"use client";
 import { useContext, createContext, useState, useEffect } from "react";
-import { auth } from '@/app/firebase';
-
+import { auth } from "@/app/firebase";
 
 import {
   signInWithPopup,
@@ -16,6 +15,8 @@ import {
 const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
+  if (typeof window === "undefined") return;
+
   const checkUserAuthentication = () => {
     return user !== null; // Return true if user is not null (logged in), otherwise return false
   };
@@ -28,20 +29,19 @@ export const AuthContextProvider = ({ children }) => {
 
   const logOut = () => {
     signOut(auth);
-
   };
 
   // const emailPasswordSignIn = async (email, password, username) => {
   //   try {
   //     const signInMethods = await fetchSignInMethodsForEmail(auth, email);
-        
+
   //     if (signInMethods.includes("password")) {
   //       const userCredential = await signInWithEmailAndPassword(auth, email, password);
   //       const user = userCredential.user; // Get the user from the userCredential
-        
+
   //       if (username) {
   //         console.log("User before profile update:", user); // Log the user object
-          
+
   //         await user.updateProfile({
   //           displayName: username,
   //         });
@@ -55,15 +55,14 @@ export const AuthContextProvider = ({ children }) => {
   //   }
   // };
 
-
   // const emailPasswordSignUp = async (email, password, username) => {
   //   try {
   //     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
   //     const user = userCredential.user; // Get the user from the userCredential
-      
+
   //     if (username) {
   //       console.log("User before profile update:", user); // Log the user object
-        
+
   //       await user.updateProfile({
   //         displayName: username,
   //       });
@@ -73,8 +72,6 @@ export const AuthContextProvider = ({ children }) => {
   //     throw error;
   //   }
   // };
-
-
 
   const emailPasswordSignUp = async (email, password) => {
     try {
@@ -87,18 +84,20 @@ export const AuthContextProvider = ({ children }) => {
   const emailPasswordSignIn = async (email, password) => {
     try {
       const signInMethods = await fetchSignInMethodsForEmail(auth, email);
-      
+
       if (signInMethods.includes("password")) {
         await signInWithEmailAndPassword(auth, email, password);
       } else {
-        setError("No user found with this email/password. Please sign up first.");
+        setError(
+          "No user found with this email/password. Please sign up first."
+        );
       }
     } catch (error) {
-      setError("An error occurred while signing in. Please check your credentials and try again.");
+      setError(
+        "An error occurred while signing in. Please check your credentials and try again."
+      );
     }
   };
-  
-  
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -107,7 +106,7 @@ export const AuthContextProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-  return (
+  return typeof window ? (
     <AuthContext.Provider
       value={{
         user,
@@ -120,9 +119,12 @@ export const AuthContextProvider = ({ children }) => {
     >
       {children}
     </AuthContext.Provider>
+  ) : (
+    ""
   );
 };
 
 export const UserAuth = () => {
+
   return useContext(AuthContext);
 };

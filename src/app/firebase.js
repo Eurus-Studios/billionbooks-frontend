@@ -17,7 +17,11 @@ const firebaseConfig = {
   measurementId: "G-J2HEXCK606"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 export const auth = getAuth(app);
+
+// Check if the code is running in a browser environment
+if (typeof window !== "undefined") {
+  const analytics = getAnalytics(app);
+}
+
