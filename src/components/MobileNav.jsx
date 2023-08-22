@@ -11,6 +11,7 @@ import { VscHeart } from "react-icons/vsc";
 import { FaSearch } from "react-icons/fa";
 import { LiaShoppingBagSolid } from "react-icons/lia";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { useWishlistContext } from "@/context/WishlistContext";
 import {
   FaFacebookF,
   FaTwitter,
@@ -21,6 +22,8 @@ import {
 } from "react-icons/fa";
 
 const MobileNav = () => {
+  const { wishlistCount } = useWishlistContext();
+
 
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [currentSection, setCurrentSection] = useState('Menu');
@@ -172,9 +175,11 @@ const MobileNav = () => {
 
             <div className="relative">
               <div className="absolute top--2 left-4 w-3 h-3 bg-indigo-900 text-white flex items-center justify-center text-xs rounded-full">
-                5 {/* Replace this number with the actual count */}
+              {wishlistCount}
               </div>
-              <VscHeart style={{ fontSize: "24px" }} />
+              <Link href="/wishlist">
+                <VscHeart style={{ fontSize: "24px" }} />
+              </Link>
             </div>
 
         </div>
@@ -182,7 +187,7 @@ const MobileNav = () => {
 {/* -----search bar=--- */}
 
 <div className="search border-2">
-        <div className="p-1 md:mt-0 flex flex-row md:form md:flex-grow md:items-center md:justify-between md:px-2 mx-2">
+        <div className="p-1 md:mt-0 flex md:form md:flex-grow md:items-center md:justify-between md:px-2 mx-2 flex-nowrap">
             <input
               type="text"
               placeholder="Search for Products"
@@ -201,35 +206,35 @@ const MobileNav = () => {
 <div className="bottommenu ind">
       <nav className="fixed z-50 bottom-0 left-0 w-full bg-white p-2 flex justify-around items-center border-t border-gray-300 md:hidden">
         <a
-          href="#"
+          href="/"
           className="text-black hover:text-gray-600 transition-colors ease-in flex flex-col items-center"
         >
           <AiOutlineHome className="h-6 w-6" />
           <span className="text-xs latofont">Home</span>
         </a>
         <a
-          href="#"
+          href="/shop"
           className="text-black hover:text-gray-600 transition-colors ease-in flex flex-col items-center"
         >
           <AiOutlineShop className="h-6 w-6" />
           <span className="text-xs latofont">Shop</span>
         </a>
         <a
-          href="#"
+          href="/cart"
           className="text-black hover:text-gray-600 transition-colors ease-in flex flex-col items-center"
         >
           <LiaShoppingBagSolid className="h-6 w-6" />
           <span className="text-xs latofont">Cart</span>
         </a>
         <a
-          href="#"
+          href="/wishlist"
           className="text-black hover:text-gray-600 transition-colors ease-in flex flex-col items-center"
         >
           <GoLocation className="h-6 w-6" />
           <span className="text-xs latofont">Track</span>
         </a>
         <a
-          href="#"
+          href=""
           className="text-black hover:text-gray-600 transition-colors ease-in flex flex-col items-center"
         >
           <AiOutlineUser className="h-6 w-6" />

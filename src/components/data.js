@@ -1,5 +1,7 @@
 // data.js
 
+import Logout from "@/app/dashboard/Logout/page";
+
 export const productDetails = [
   {
     id: 1,
@@ -525,9 +527,9 @@ export const categories = [
 export const navigationItems = [
   {
     id: 1,
-    title: "Home",
+    title: "HOME",
     url: "/",
-    op2Title:"DASHBOARD",
+    op2Title:"HEllO,",
     op2Url:"/dashboard"
   },
   {
@@ -538,12 +540,12 @@ export const navigationItems = [
   {
     id: 3,
     title: "YOUR ORDERS",
-    url: "/orders",
+    url: "/dashboard/Orders",
   },
   {
     id: 4,
     title: "PAGES",
-    url: "/pages",
+    url: '',
     submenu: [
       { id: 41, title: "FAQS", url: "/pages/FAQs" },
       { id: 42, title: "Contact Us", url: "/pages/Contact-us" },
@@ -570,9 +572,9 @@ export const navigationItems = [
     title: "HELP DESK",
     url: "/help",
     submenu: [
-      { id: 61, title: "WhatsaApp", url: "/help/submenu1" },
+      { id: 61, title: "WhatsaApp", url: "https://api.whatsapp.com/send?phone=919931839868&text=Hello%20Team%20Billionbooks%2C" },
       { id: 62, title: "Call us", url: "/help/submenu2" },
-      { id: 63, title: "Mail us", url: "/help/submenu2" },
+      { id: 63, title: "Mail us", url: "mailto:billionbooksofficial@gmail.com" },
       
     ],
   },
@@ -581,4 +583,20 @@ export const navigationItems = [
     title: "MY WALLET",
     url: "/dashboard/Wallet",
   },
+];
+
+
+ export const sidebarOptions = [
+  { label: "Dashboard", link: "/dashboard" },
+  { label: "Orders", link: "/dashboard/Orders" },
+  { label: "Downloads", link: "/dashboard/downloads" },
+  { label: "Addresses", link: "/dashboard/address" },
+  { label: "Account details", link: "/dashboard/AccountDetails" },
+  { label: "Request Replacement", link: "/dashboard/request-replacement" },
+  { label: "Wallet", link: "/dashboard/Wallet" },
+  { label: "Wishlist", link: "/wishlist" },
+  { label: "View POS", link: "/" },
+  { label: "Logout", link: "/dashboard/logout" },
+
+  { label: "Delete Account", link: "/dashboard/delete-account" },
 ];

@@ -375,7 +375,7 @@ figure img {
 }
 .blackbg{
   background-color:black;
-  height: 500px;
+ 
   margin-bottom: 40px;
 
 
@@ -1146,3 +1146,136 @@ padding: 6px;
     opacity: 1;
   }
 }
+
+
+
+
+
+
+
+
+.sidebar-container {
+  position: relative;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Styles for the dropdown trigger */
+.dropdown-trigger {
+  margin: 0;
+  padding: 0;
+}
+
+/* Show the sidebar when hovering over the trigger */
+.cursor-pointer:hover .sidebar {
+  display: block;
+}
+
+/* Styles for the sidebar content */
+.sidebar {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  min-width: 200px; /* Adjust the width as needed */
+  z-index: 1;
+}
+
+/* Additional styling for the sidebar content */
+.sidebar p {
+  margin: 0;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+
+/* Style for the dropdown trigger */
+/* Hide the dropdown initially */
+.dropdown-menu {
+  display: none;
+  right: -28px;
+    top: 44px;
+}
+
+/* Show the dropdown when its parent is hovered */
+.brow:hover .dropdown-menu {
+  display: block;
+}
+
+
+
+
+
+
+
+/* Responsive breakpoint: When the screen width is less than 768px */
+@media (max-width: 767px) {
+  .flex-row {
+    flex-direction: column; /* Change the direction to column layout */
+  }
+  
+  /* Adjust sidebar and main content widths for better spacing */
+  .flex-grow {
+    width: 100%; /* Take up full width */
+  }
+
+  .ml-6 {
+    margin-left: 0.75rem; /* Adjust spacing for better readability */
+  }
+  
+  .mt-16 {
+    margin-top: 1rem; /* Adjust spacing for better readability */
+  }
+}
+
+
+.hero-bg{
+  /* background-image: url("/public/bg.jpg");
+   */
+
+   background-color: #1EBEA5;
+  
+  height: 90vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.navv-toggle{
+  display: none;
+}
+
+/* Add these CSS rules to your stylesheet */
+/* Add these styles in your CSS */
+@media (max-width: 1080px) {
+  .navv {
+    flex-direction: column;
+    display: none;
+    justify-content: start;
+    align-items: start;
+  }
+  
+  .navv.open {
+    display: flex;
+  }
+  
+  .navv-toggle {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+
+  .shoptitle{
+   font-size: 40px;
+  }
+}
+
+

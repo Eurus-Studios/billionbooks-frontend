@@ -139,13 +139,13 @@ Thebillionbooks reserves the right to monitor all Comments and to remove any Com
 <div className="mb-4">We shall not be hold responsible for any content that appears on your Website. You agree to protect and defend us against all claims that is rising on your Website. No link(s) should appear on any Website that may be interpreted as libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or other violation of, any third party rights.</div>
 
 <h2 className="text-2xl font-bold mt-8 mb-4">Your Privacy</h2>
-<div class="mb-10">Please read Privacy Policy</div>
+<div className="mb-10">Please read Privacy Policy</div>
 
 <h2 className="text-2xl font-bold mt-8 mb-4">Reservation of Rights</h2>
-<div class="mb-10">We reserve the right to request that you remove all links or any particular link to our Website. You approve to immediately remove all links to our Website upon request. We also reserve the right to amen these terms and conditions and it’s linking policy at any time. By continuously linking to our Website, you agree to be bound to and follow these linking terms and conditions.</div>
+<div className="mb-10">We reserve the right to request that you remove all links or any particular link to our Website. You approve to immediately remove all links to our Website upon request. We also reserve the right to amen these terms and conditions and it’s linking policy at any time. By continuously linking to our Website, you agree to be bound to and follow these linking terms and conditions.</div>
 
 <h2 className="text-2xl font-bold mt-8 mb-4">Removal of links from our website </h2>
-<div class="mb-10">If you find any link on our Website that is offensive for any reason, you are free to contact and inform us any moment. We will consider requests to remove links but we are not obligated to or so or to respond to you directly.</div>
+<div className="mb-10">If you find any link on our Website that is offensive for any reason, you are free to contact and inform us any moment. We will consider requests to remove links but we are not obligated to or so or to respond to you directly.</div>
 
 <div className="mb-10">e do not ensure that the information on this website is correct, we do not warrant its completeness or accuracy; nor do we promise to ensure that the website remains available or that the material on the website is kept up to date.</div>
 

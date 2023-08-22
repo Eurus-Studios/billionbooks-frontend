@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import Link from "next/link";
 import { GoChecklist, GoDownload } from "react-icons/go";
@@ -5,15 +7,38 @@ import { VscAccount, VscLocation, VscHeart } from "react-icons/vsc";
 import { TfiWallet, TfiSettings } from "react-icons/tfi";
 import { AiOutlineDelete, AiOutlineLogout } from "react-icons/ai";
 import { TbReplace } from "react-icons/tb";
+import { UserAuth } from "@/context/AuthContext";
+import { useRouter } from "next/navigation";
 
 const dashboard = () => {
+  const router=useRouter();
+  const {user, logOut}=UserAuth();
+
+  console.log(user)
+  const handleLogout = async () => {
+
+    
+    try {
+      await logOut();
+      // After logging out, you might want to redirect to another page
+      router.push("/login");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <div className="container mx-auto  px-4">
         <div className="content pb-5">
           <p>
-            Hello <span className="font-bold latofont text-base">username</span> (not{" "}
-            <span className="font-bold latofont">username</span>? Log out)
+          Hello <span className="font-bold latofont text-base">
+              {user?.displayName || "username"}
+            </span>{" "}
+            (not{" "}
+            <span className="font-bold latofont">
+              {user?.displayName || "username"}
+            </span>
+            ? Log out)
           </p>
           <br />
           <p className="latofont text-base">
@@ -72,12 +97,17 @@ const dashboard = () => {
               VIEW POS
             </div>
           </Link>
-          <Link href="/dashboard/logout">
-            <div className="bluebg p-4 flex flex-col items-center justify-center cursor-pointer">
-              <AiOutlineLogout className="mb-2.5 hover:text-gray-500 transition-colors" style={{ fontSize: "45px" }} />
-              LOGOUT
-            </div>
-          </Link>
+          
+          <div className="bluebg p-4 flex flex-col items-center justify-center cursor-pointer">
+        <button
+          className="flex flex-col items-center justify-center cursor-pointer"
+          onClick={handleLogout}
+        >
+          <AiOutlineLogout className="mb-2.5 hover:text-gray-500 transition-colors" style={{ fontSize: "45px" }} />
+          LOGOUT
+        </button>
+      </div>
+          
           <Link href="/dashboard/delete-account">
             <div className="bluebg p-4 flex flex-col items-center justify-center cursor-pointer">
               <AiOutlineDelete className="mb-2.5 hover:text-gray-500 transition-colors" style={{ fontSize: "45px" }} />

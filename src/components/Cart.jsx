@@ -38,7 +38,7 @@ const Cart = () => {
             <div className="empty-cart flex flex-col justify-center ">
               <BsCartX className=" self-center text-gray-200 " size={100} />
               <h3 className="my-6">No products in the cart</h3>
-              <Link href="/">
+              <Link href="/shop">
                 <button
                   type="button"
                   onClick={() => setShowCart(false)}
