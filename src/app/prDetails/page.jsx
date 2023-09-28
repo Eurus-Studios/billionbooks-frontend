@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import {
   FaFacebookF,
   FaTwitter,
@@ -25,6 +26,7 @@ import { useWishlistContext } from "@/context/WishlistContext";
 import productDetails from "@/components/data";
 // import BookBoxPD from "@/components/BookBoxPD"
 import BookSelector from "@/components/BookBoxPD";
+
 
 const PDetails = ({ productId, img, title, price, category }) => {
 
@@ -151,13 +153,13 @@ const PDetails = ({ productId, img, title, price, category }) => {
               </p>
               <div className="flex flex-row">
         <button onClick={handlePrevProduct}>
-          <IoIosArrowBack className="mx-0.5" />
+          <IoIosArrowBack className="mx-0.5 hover:text-gray-700" />
         </button>
-        <button onClick={handlePrevProduct}>
-          <CiGrid41 />
-        </button>
+        <Link href="/shop">
+          <CiGrid41 className=" hover:text-gray-700"  />
+        </Link>
         <button onClick={handleNextProduct}>
-          <IoIosArrowForward className="mx-0.5" />
+        <IoIosArrowForward className="mx-0.5  hover:text-gray-700" />
         </button>
       </div>
 
@@ -171,7 +173,7 @@ const PDetails = ({ productId, img, title, price, category }) => {
                 className={`price pt-2 text-2xl font-bold mb-4 ${styles.price}`}
               >
                 <span className="line-through text-xl text-gray-400 font-normal">
-                  ₹699
+                  ₹6o9
                 </span>{" "}
                 {price}{" "}
               </p>

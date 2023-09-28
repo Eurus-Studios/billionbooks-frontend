@@ -11,6 +11,7 @@ import { VscHeart } from "react-icons/vsc";
 import { FaSearch } from "react-icons/fa";
 import { LiaShoppingBagSolid } from "react-icons/lia";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import SideLoginBar from "./SideLoginbar";
 import { useWishlistContext } from "@/context/WishlistContext";
 import {
   FaFacebookF,
@@ -20,8 +21,26 @@ import {
   FaLinkedin,
   FaInstagram,
 } from "react-icons/fa";
+import { UserAuth } from "@/context/AuthContext";
 
 const MobileNav = () => {
+  
+  const { checkUserAuthentication } = UserAuth();
+  const isAuthenticated = checkUserAuthentication(); 
+
+  const [showLoginBar, setShowLoginBar] = useState(false);
+  const [isSideLoginOpen, setIsSideLoginOpen] = useState(false);
+
+  const handleLinkClick = () => {
+    if (isAuthenticated) {
+      // Redirect to dashboard
+      window.location.href = '/dashboard';
+    } else {
+      // Open the SideLoginBar
+      setShowLoginBar(true);
+    }
+  };
+
   const { wishlistCount } = useWishlistContext();
 
 
@@ -233,15 +252,35 @@ const MobileNav = () => {
           <GoLocation className="h-6 w-6" />
           <span className="text-xs latofont">Track</span>
         </a>
-        <a
-          href=""
+        {/* <a
+          href="/dashboard"
           className="text-black hover:text-gray-600 transition-colors ease-in flex flex-col items-center"
         >
           <AiOutlineUser className="h-6 w-6" />
           <span className="text-xs latofont">My Account</span>
-        </a>
+        </a> */}
+
+
+
+<div>
+      <span
+        href=" "
+        onClick={handleLinkClick}
+        className="text-black hover:text-gray-600 transition-colors ease-in flex flex-col items-center"
+      >
+        <AiOutlineUser className="h-6 w-6" />
+        <span className="text-xs latofont">My Account</span>
+      </span>
+      
+      {showLoginBar && !isAuthenticated && <SideLoginBar />}
+    </div>
+
       </nav>
     </div>
+
+    {isSideLoginOpen && (
+              <SideLoginBar onClose={() => setIsSideLoginOpen(false)} />
+            )}
 
     </>
   );

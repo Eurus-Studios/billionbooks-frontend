@@ -29,7 +29,11 @@ const Sidebar = () => {
 
 
   return (
-    <div className="w-72 border-r border-gray-300 h-full">
+    <div className="w-full md:w-72 h-full border-gray-300 md:border-r md:border-gray-300">
+  
+
+
+
       <div className="p-6">
         <h1 className="text-xl font-semibold mb-4">MY ACCOUNT</h1>
         <hr />
